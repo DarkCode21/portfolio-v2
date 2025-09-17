@@ -1,12 +1,12 @@
 "use client";
 import { useRef } from "react";
 import Card from "@/components/Card";
-import { Globe } from "@/components/globe";
+import { Globe } from "@/components/Globe";
 import CopyEmailButton from "@/components/CopyEmailButton";
-import { Frameworks } from "@/components/FrameWorks";
+import { Frameworks } from "@/components/Frameworks";
 
 export default function About() {
-  const grid2Container = useRef<HTMLDivElement | null>(null);
+  const grid2Container = useRef<HTMLDivElement>(null);
 
   return (
     <section className="c-space section-spacing" id="about">

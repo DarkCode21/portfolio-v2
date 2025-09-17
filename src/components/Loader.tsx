@@ -1,7 +1,12 @@
-export default function Loader() {
+import { Html, useProgress } from "@react-three/drei";
+
+const Loader = () => {
+  const { progress } = useProgress();
   return (
-    <div className="absolute inset-0 grid place-items-center">
-      <span className="animate-pulse text-neutral-400">Loading…</span>
-    </div>
+    <Html center className="text-xl font-normal text-center">
+      {progress}% Loaded
+    </Html>
   );
-}
+};
+
+export default Loader;

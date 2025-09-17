@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FlipWords } from "@/components/FlipWords"; // si aún es .jsx, deja el archivo como está
+import { FlipWords } from "./FlipWords";
 
 const variants = {
   hidden: { opacity: 0, x: -50 },
