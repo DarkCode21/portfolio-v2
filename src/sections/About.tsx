@@ -27,7 +27,7 @@ export default function About() {
               skills to deliver dynamic software and web applications.
             </p>
           </div>
-          <div className="pointer-evets-none absolute inset-x-0 -bottom-4 h-1/2 bg-gradient-to-t from-indigo sm:h-1/3" />
+          <div className="pointer-events-none absolute inset-x-0 -bottom-4 h-1/2 bg-gradient-to-t from-indigo sm:h-1/3" />
         </div>
 
         {/* Grid 2 */}
@@ -115,7 +115,7 @@ export default function About() {
               allow me to build robust and scalable applications
             </p>
           </div>
-          <div className="absolute inset-y-0 start-[50%] h-full w-full md:inset-y-9 md:scale-125">
+          <div className="absolute inset-y-0 start-[50%] h-full w-full md:inset-y-5 md:scale-125">
             <Frameworks />
           </div>
         </div>

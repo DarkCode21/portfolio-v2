@@ -1,4 +1,3 @@
-// src/components/Frameworks.tsx
 "use client";
 import { OrbitingCircles } from "@/components/OrbitingCircles";
 
@@ -24,7 +23,7 @@ export function Frameworks() {
 
   return (
     <div className="relative flex h-[15rem] w-full flex-col items-center justify-center">
-      <OrbitingCircles iconSize={40}>
+      <OrbitingCircles iconSize={40} radius={175}>
         {skills.map((s, i) => (
           <Icon key={i} src={`/assets/logos/${s}.svg`} />
         ))}
