@@ -1,6 +1,6 @@
 "use client";
 import { twMerge } from "tailwind-merge";
-import React from "react";
+import type React from "react";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   reverse?: boolean;
@@ -29,9 +29,9 @@ export default function Marquee({
         className
       )}
     >
-      {Array.from({ length: repeat }).map((_, i) => (
+      {Array.from({ length: repeat }).map(() => (
         <div
-          key={i}
+          key={crypto.randomUUID()}
           className={twMerge(
             "flex shrink-0 justify-around [gap:var(--gap)]",
             vertical

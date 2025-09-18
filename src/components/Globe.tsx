@@ -1,10 +1,45 @@
-// src/components/Globe.tsx
 "use client";
 
 import createGlobe from "cobe";
 import { useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
+
+type GlobeMarker = { location: [number, number]; size: number };
+
+interface GlobeRenderState {
+  phi: number;
+  theta: number;
+  width: number;
+  height: number;
+}
+
+interface GlobeConfig {
+  width: number;
+  height: number;
+  onRender: (state: GlobeRenderState) => void;
+  devicePixelRatio?: number;
+  phi?: number;
+  theta?: number;
+  dark?: number;
+  diffuse?: number;
+  mapSamples?: number;
+  mapBrightness?: number;
+  baseColor?: [number, number, number];
+  markerColor?: [number, number, number];
+  glowColor?: [number, number, number];
+  markers?: GlobeMarker[];
+}
+
+interface GlobeInstance {
+  destroy: () => void;
+}
+
+type CreateGlobe = (
+  canvas: HTMLCanvasElement,
+  config: GlobeConfig
+) => GlobeInstance;
+// ------------------------------------------------
 
 const MOVEMENT_DAMPING = 1400;
 
@@ -19,9 +54,9 @@ const GLOBE_CONFIG = {
   diffuse: 0.4,
   mapSamples: 16000,
   mapBrightness: 1.2,
-  baseColor: [1, 1, 1],
-  markerColor: [1, 1, 1],
-  glowColor: [1, 1, 1],
+  baseColor: [1, 1, 1] as [number, number, number],
+  markerColor: [1, 1, 1] as [number, number, number],
+  glowColor: [1, 1, 1] as [number, number, number],
   markers: [
     { location: [14.5995, 120.9842], size: 0.03 },
     { location: [19.076, 72.8777], size: 0.1 },
@@ -33,19 +68,20 @@ const GLOBE_CONFIG = {
     { location: [40.7128, -74.006], size: 0.1 },
     { location: [34.6937, 135.5022], size: 0.05 },
     { location: [41.0082, 28.9784], size: 0.06 },
-  ],
-};
+  ] as GlobeMarker[],
+} satisfies GlobeConfig;
 
 type Props = {
   className?: string;
-  config?: typeof GLOBE_CONFIG;
+  config?: GlobeConfig;
 };
 
 export function Globe({ className, config = GLOBE_CONFIG }: Props) {
-  let phi = 0;
-  let width = 0;
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const pointerInteracting = useRef<number | null>(null);
+
+  const phiRef = useRef(0);
+  const widthRef = useRef(0);
 
   const r = useMotionValue(0);
   const rs = useSpring(r, { mass: 1, damping: 30, stiffness: 100 });
@@ -65,31 +101,36 @@ export function Globe({ className, config = GLOBE_CONFIG }: Props) {
   };
 
   useEffect(() => {
-    const onResize = () => {
-      if (canvasRef.current) width = canvasRef.current.offsetWidth;
-    };
-    window.addEventListener("resize", onResize);
-    onResize();
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-    const globe = (createGlobe as any)(canvasRef.current, {
+    const ro = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        widthRef.current = entry.contentRect.width;
+      }
+    });
+    ro.observe(canvas);
+    widthRef.current = canvas.offsetWidth;
+
+    const createGlobeTyped = createGlobe as unknown as CreateGlobe;
+
+    const globe = createGlobeTyped(canvas, {
       ...config,
-      width: width * 2,
-      height: width * 2,
-      onRender: (state: any) => {
-        if (!pointerInteracting.current) phi += 0.005;
-        state.phi = phi + rs.get();
-        state.width = width * 2;
-        state.height = width * 2;
+      width: widthRef.current * 2,
+      height: widthRef.current * 2,
+      onRender: (state: GlobeRenderState) => {
+        if (!pointerInteracting.current) phiRef.current += 0.005;
+        state.phi = phiRef.current + rs.get();
+        state.width = widthRef.current * 2;
+        state.height = widthRef.current * 2;
       },
     });
 
-    setTimeout(() => {
-      if (canvasRef.current) canvasRef.current.style.opacity = "1";
-    }, 0);
+    canvas.style.opacity = "1";
 
     return () => {
       globe.destroy();
-      window.removeEventListener("resize", onResize);
+      ro.disconnect();
     };
   }, [rs, config]);
 
@@ -101,14 +142,14 @@ export function Globe({ className, config = GLOBE_CONFIG }: Props) {
       )}
     >
       <canvas
+        ref={canvasRef}
         className={twMerge(
           "size-[30rem] opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         )}
-        ref={canvasRef}
         onPointerDown={(e) => updatePointerInteraction(e.clientX)}
         onPointerUp={() => updatePointerInteraction(null)}
         onPointerOut={() => updatePointerInteraction(null)}
-        onMouseMove={(e) => updateMovement(e.clientX)}
+        onPointerMove={(e) => updateMovement(e.clientX)}
         onTouchMove={(e) =>
           e.touches[0] && updateMovement(e.touches[0].clientX)
         }

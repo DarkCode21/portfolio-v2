@@ -1,5 +1,6 @@
-// src/components/CopyEmailButton.tsx
 "use client";
+
+import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -32,7 +33,12 @@ export default function CopyEmailButton() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.1, ease: "easeInOut" }}
           >
-            <img src="/assets/copy-done.svg" className="w-5" alt="copy done" />
+            <Image
+              src="/assets/copy-done.svg"
+              width={20}
+              height={20}
+              alt="copy done"
+            />
             Email has Copied
           </motion.p>
         ) : (
@@ -44,7 +50,12 @@ export default function CopyEmailButton() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.1 }}
           >
-            <img src="/assets/copy.svg" className="w-5" alt="copy" />
+            <Image
+              src="/assets/copy-done.svg"
+              width={20}
+              height={20}
+              alt="copy done"
+            />
             Copy Email Address
           </motion.p>
         )}

@@ -1,5 +1,11 @@
 "use client";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  type MotionStyle,
+} from "framer-motion";
 
 export default function ParallaxBackground() {
   const { scrollYProgress } = useScroll();
@@ -31,7 +37,7 @@ export default function ParallaxBackground() {
               backgroundPosition: "bottom",
               backgroundSize: "cover",
               y: mountain3Y,
-            } as any
+            } as MotionStyle
           }
         />
 
@@ -44,7 +50,7 @@ export default function ParallaxBackground() {
               backgroundPosition: "bottom",
               backgroundSize: "cover",
               x: planetsX,
-            } as any
+            } as MotionStyle
           }
         />
 
@@ -57,7 +63,7 @@ export default function ParallaxBackground() {
               backgroundPosition: "bottom",
               backgroundSize: "cover",
               y: mountain2Y,
-            } as any
+            } as MotionStyle
           }
         />
 
@@ -70,7 +76,7 @@ export default function ParallaxBackground() {
               backgroundPosition: "bottom",
               backgroundSize: "cover",
               y: mountain1Y,
-            } as any
+            } as MotionStyle
           }
         />
       </div>

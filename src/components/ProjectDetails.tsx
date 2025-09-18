@@ -1,6 +1,9 @@
 // src/components/ProjectDetails.tsx
 "use client";
+
+import { useEffect, useId, useRef } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import type { Tag } from "@/constants";
 
 type Props = {
@@ -22,32 +25,73 @@ export default function ProjectDetails({
   href,
   closeModal,
 }: Props) {
+  const titleId = useId();
+  const descId = useId();
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  // Cerrar con Escape
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeModal();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [closeModal]);
+
+  // Cerrar al hacer click fuera del cuadro
+  const onBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) closeModal();
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex h-full w-full items-center justify-center overflow-hidden backdrop-blur-sm">
+    <div
+      className="fixed inset-0 z-50 flex h-full w-full items-center justify-center overflow-hidden backdrop-blur-sm"
+      onClick={onBackdropClick}
+      // El backdrop no es parte del árbol accesible
+      aria-hidden={false}
+    >
       <motion.div
+        ref={dialogRef}
         className="relative max-w-2xl rounded-2xl border border-white/10 bg-gradient-to-l from-midnight to-navy shadow-sm"
-        initial={{ opacity: 0, scale: 0.5 }}
+        initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         role="dialog"
         aria-modal="true"
-        aria-labelledby="project-title"
+        aria-labelledby={titleId}
+        aria-describedby={descId}
       >
         <button
+          type="button"
           onClick={closeModal}
-          className="absolute right-5 top-5 rounded-sm bg-midnight p-2 hover:bg-gray-500"
+          className="absolute right-5 top-5 rounded-sm bg-midnight p-2 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-white/40"
           aria-label="Close"
         >
-          <img src="/assets/close.svg" className="h-6 w-6" alt="" />
+          <Image
+            src="/assets/close.svg"
+            alt=""
+            width={24}
+            height={24}
+            priority
+          />
         </button>
 
-        <img src={image} alt={title} className="w-full rounded-t-2xl" />
+        <Image
+          src={image}
+          alt={title}
+          width={1280}
+          height={720}
+          className="w-full rounded-t-2xl object-cover"
+          priority
+        />
 
         <div className="p-5">
-          <h5 id="project-title" className="mb-2 text-2xl font-bold text-white">
+          <h5 id={titleId} className="mb-2 text-2xl font-bold text-white">
             {title}
           </h5>
 
-          <p className="mb-3 font-normal text-neutral-400">{description}</p>
+          <p id={descId} className="mb-3 font-normal text-neutral-400">
+            {description}
+          </p>
 
           {subDescription.map((subDesc, i) => (
             <p key={i} className="mb-3 font-normal text-neutral-400">
@@ -58,11 +102,13 @@ export default function ProjectDetails({
           <div className="mt-4 flex items-center justify-between">
             <div className="flex gap-3">
               {tags.map((tag) => (
-                <img
+                <Image
                   key={tag.id}
                   src={tag.path}
                   alt={tag.name}
-                  className="size-10 rounded-lg hover-animation"
+                  width={40}
+                  height={40}
+                  className="size-10 rounded-lg hover-animation object-contain"
                 />
               ))}
             </div>
@@ -71,19 +117,25 @@ export default function ProjectDetails({
               <a
                 href={href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex cursor-pointer items-center gap-1 font-medium hover-animation"
               >
                 View Project
-                <img src="/assets/arrow-up.svg" className="size-4" alt="" />
+                <Image
+                  src="/assets/arrow-up.svg"
+                  alt=""
+                  width={16}
+                  height={16}
+                />
               </a>
             ) : (
               <span className="inline-flex items-center gap-1 text-white">
                 View Project
-                <img
+                <Image
                   src="/assets/arrow-up.svg"
-                  className="size-4"
                   alt=""
+                  width={16}
+                  height={16}
                 />
               </span>
             )}

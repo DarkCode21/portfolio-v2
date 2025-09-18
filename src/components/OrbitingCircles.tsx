@@ -36,6 +36,8 @@ export function OrbitingCircles({
       {path && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
           className="pointer-events-none absolute inset-0 size-full"
         >
           <circle
@@ -54,7 +56,7 @@ export function OrbitingCircles({
         const angle = (360 / count) * index;
         return (
           <div
-            key={index}
+            key={(child as React.ReactElement).key ?? `orbit-${index}`}
             style={
               {
                 "--duration": calculatedDuration,

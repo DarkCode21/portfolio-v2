@@ -1,8 +1,9 @@
-// src/components/Project.tsx
 "use client";
-import React, { useState } from "react";
-import ProjectDetails from "./ProjectDetails";
+
+import Image from "next/image";
+import { useId, useState } from "react";
 import type { Tag } from "@/constants";
+import ProjectDetails from "./ProjectDetails";
 
 type Props = {
   title: string;
@@ -23,35 +24,54 @@ export default function Project({
   tags,
   setPreview,
 }: Props) {
-  const [isHidden, setIsHidden] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const headingId = useId();
 
   return (
     <>
-      <div
+      <section
+        aria-labelledby={headingId}
         className="space-y-14 py-10 sm:flex sm:flex-wrap sm:items-center sm:justify-between sm:space-y-0"
         onMouseEnter={() => setPreview(image)}
         onMouseLeave={() => setPreview(null)}
+        onFocusCapture={() => setPreview(image)}
+        onBlurCapture={() => setPreview(null)}
       >
         <div>
-          <p className="text-2xl">{title}</p>
-          <div className="mt-2 flex gap-5 text-sand">
+          <h3 id={headingId} className="text-2xl">
+            {title}
+          </h3>
+
+          <ul className="mt-2 flex gap-5 text-sand">
             {tags.map((tag) => (
-              <span key={tag.id}>{tag.name}</span>
+              <li key={tag.id}>
+                <span className="whitespace-nowrap">{tag.name}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
+
         <button
-          onClick={() => setIsHidden(true)}
+          type="button"
+          onClick={() => setIsOpen(true)}
           className="hover-animation flex cursor-pointer items-center gap-1"
+          aria-haspopup="dialog"
+          aria-controls={isOpen ? `${headingId}-details` : undefined}
         >
           Read More
-          <img src="/assets/arrow-right.svg" className="w-5" alt="" />
+          <Image
+            src="/assets/arrow-right.svg"
+            alt="Open project details"
+            width={20}
+            height={20}
+            className="w-5"
+          />
         </button>
-      </div>
+      </section>
 
       <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-700 to-transparent" />
 
-      {isHidden && (
+      {isOpen && (
         <ProjectDetails
           title={title}
           description={description}
@@ -59,7 +79,7 @@ export default function Project({
           image={image}
           tags={tags}
           href={href}
-          closeModal={() => setIsHidden(false)}
+          closeModal={() => setIsOpen(false)}
         />
       )}
     </>

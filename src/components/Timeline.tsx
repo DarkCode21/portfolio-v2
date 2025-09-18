@@ -1,6 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Experience } from "@/constants";
 
 type Props = { data: Experience[] };
@@ -10,11 +10,26 @@ export function Timeline({ data }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [height, setHeight] = useState(0);
 
+  // Mantén height sincronizado con el tamaño real del contenedor
   useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
-    }
+    if (!ref.current) return;
+
+    const el = ref.current;
+    const update = () => setHeight(el.getBoundingClientRect().height);
+
+    update(); // cálculo inicial
+
+    // Observa cambios de tamaño del contenedor
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+
+    // Como fallback, escucha resize del viewport
+    window.addEventListener("resize", update);
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", update);
+    };
   }, []);
 
   const { scrollYProgress } = useScroll({
@@ -25,16 +40,22 @@ export function Timeline({ data }: Props) {
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
+  // Genera una key estable para cada item
+  const itemKey = (item: Experience) =>
+    // Si tu tipo Experience ya trae un id, úsalo:
+    // @ts-expect-error — si no existe id en tu tipo, caemos al fallback
+    item.id ?? `${item.date}-${item.title}-${item.job}`;
+
   return (
     <div ref={containerRef} className="relative pb-20">
       <div ref={ref} className="relative">
-        {data.map((item, index) => (
+        {data.map((item) => (
           <div
-            key={index}
+            key={itemKey(item)}
             className="md:pt-40 md:gap-10 flex justify-start pt-10"
           >
             {/* left column (date/title) */}
-            <div className="sticky top-40 z-40 flex max-w-xs md:w-full lg:max-w-sm flex-col items-center self-start md:flex-row">
+            <div className="sticky top-40 z-40 flex max-w-xs md:w/full lg:max-w-sm flex-col items-center self-start md:flex-row">
               <div className="absolute -left-[15px] flex h-10 w-10 items-center justify-center rounded-full bg-midnight">
                 <div className="h-4 w-4 rounded-full border border-neutral-700 bg-neutral-800 p-2" />
               </div>
@@ -51,8 +72,11 @@ export function Timeline({ data }: Props) {
                 <h3>{item.date}</h3>
                 <h3>{item.job}</h3>
               </div>
-              {item.contents.map((content, i) => (
-                <p className="mb-3 font-normal text-neutral-400" key={i}>
+              {item.contents.map((content) => (
+                <p
+                  className="mb-3 font-normal text-neutral-400"
+                  key={`${itemKey(item)}-${content}`}
+                >
                   {content}
                 </p>
               ))}
