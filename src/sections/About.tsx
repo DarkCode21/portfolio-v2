@@ -1,7 +1,8 @@
 "use client";
 
-import { useId, useRef } from "react";
 import Image from "next/image";
+import { useId, useRef } from "react";
+
 import Card from "@/components/Card";
 import CopyEmailButton from "@/components/CopyEmailButton";
 import { Frameworks } from "@/components/Frameworks";
@@ -10,8 +11,7 @@ import { Globe } from "@/components/Globe";
 export default function About() {
   const grid2Container = useRef<HTMLDivElement>(null);
 
-  // id único para la sección (si necesitas anclar con "about", usa data-attr)
-  const sectionId = useId(); // p.ej. :r0:-about
+  const sectionId = useId();
   const aboutId = `${sectionId}-about`;
 
   return (

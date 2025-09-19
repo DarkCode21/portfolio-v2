@@ -1,42 +1,72 @@
 "use client";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useState } from "react";
-import Project from "@/components/Project"; // si aún es .jsx, no pasa nada
+import Image from "next/image";
+import { useEffect, useId, useState } from "react";
+import Project from "@/components/Project";
 import { myProjects } from "@/constants";
 
 export default function Projects() {
-	const x = useMotionValue(0);
-	const y = useMotionValue(0);
-	const springX = useSpring(x, { damping: 10, stiffness: 50 });
-	const springY = useSpring(y, { damping: 10, stiffness: 50 });
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const springX = useSpring(x, { damping: 10, stiffness: 50 });
+  const springY = useSpring(y, { damping: 10, stiffness: 50 });
 
-	const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-		x.set(e.clientX + 20);
-		y.set(e.clientY + 20);
-	};
+  const [preview, setPreview] = useState<string | null>(null);
 
-	const [preview, setPreview] = useState<string | null>(null);
+  useEffect(() => {
+    const handlePointerMove = (e: PointerEvent) => {
+      x.set(e.clientX + 20);
+      y.set(e.clientY + 20);
+    };
 
-	return (
-		<section
-			onMouseMove={handleMouseMove}
-			className="relative c-space section-spacing"
-			id="work"
-		>
-			<h2 className="text-heading">My Selected Projects</h2>
-			<div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
-			{myProjects.map((project) => (
-				<Project key={project.id} {...project} setPreview={setPreview} />
-			))}
+    const handleMouseMove = (e: MouseEvent) => {
+      x.set(e.clientX + 20);
+      y.set(e.clientY + 20);
+    };
 
-			{preview && (
-				<motion.img
-					className="pointer-events-none fixed left-0 top-0 z-50 h-56 w-80 rounded-lg object-cover shadow-lg"
-					src={preview}
-					style={{ x: springX, y: springY }}
-					alt="preview"
-				/>
-			)}
-		</section>
-	);
+    window.addEventListener("pointermove", handlePointerMove, {
+      passive: true,
+    });
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+
+    return () => {
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [x, y]);
+
+  const sectionId = useId();
+
+  return (
+    <section
+      id={`${sectionId}-work`}
+      data-section="work"
+      aria-label="Selected projects section"
+      className="relative c-space section-spacing"
+    >
+      <h2 className="text-heading">My Selected Projects</h2>
+      <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
+
+      {myProjects.map((project) => (
+        <Project key={project.id} {...project} setPreview={setPreview} />
+      ))}
+
+      {preview && (
+        <motion.div
+          className="pointer-events-none fixed left-0 top-0 z-50 rounded-lg shadow-lg"
+          style={{ x: springX, y: springY }}
+          aria-hidden
+        >
+          <Image
+            src={preview}
+            alt="Project preview"
+            width={320}
+            height={224}
+            className="h-56 w-80 rounded-lg object-cover"
+            priority
+          />
+        </motion.div>
+      )}
+    </section>
+  );
 }
