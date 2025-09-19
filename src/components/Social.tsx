@@ -1,7 +1,6 @@
-import type { ReactElement } from "react";
 import Link from "next/link";
-import { FaGithub, FaLinkedinIn, FaYoutube, FaInstagram } from "react-icons/fa";
-
+import type { ReactElement } from "react";
+import { FaGithub, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
 type SocialItem = {
   icon: ReactElement;
@@ -42,11 +41,11 @@ const Social = ({ containerStyles, iconStyles }: SocialProps) => {
     <div className={containerStyles}>
       {socials.map((item) => (
         <Link
-          key={item.path} 
+          key={item.path}
           href={item.path}
           target="_blank"
-          rel="noopener noreferrer" 
-          aria-label={item.label} 
+          rel="noopener noreferrer"
+          aria-label={item.label}
           className={iconStyles}
           title={item.label}
         >
