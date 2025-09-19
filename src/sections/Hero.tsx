@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import { Float } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { easing } from "maath";
@@ -34,8 +32,9 @@ export default function Hero() {
           <Suspense fallback={<Loader />}>
             <Float>
               <Astronaut
-                scale={isMobile ? 0.23 : 0.3}
-                position={isMobile ? [0, -1.5, 0] : [0, -1.2, 0]}
+                scale={isMobile ? 1.2 : 1.5}
+                position={isMobile ? [0.2, -1.5, 0] : [1.6, -1.5, 0]}
+                rotation={[-Math.PI / 1.3, 0.9, 2.5]}
               />
             </Float>
             <Rig />
