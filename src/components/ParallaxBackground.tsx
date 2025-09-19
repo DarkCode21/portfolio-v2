@@ -1,10 +1,11 @@
 "use client";
+
 import {
+  type MotionStyle,
   motion,
   useScroll,
   useSpring,
   useTransform,
-  type MotionStyle,
 } from "framer-motion";
 
 export default function ParallaxBackground() {

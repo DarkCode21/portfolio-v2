@@ -1,25 +1,42 @@
 "use client";
-import { useRef } from "react";
+
+import { useId, useRef } from "react";
+import Image from "next/image";
 import Card from "@/components/Card";
-import { Globe } from "@/components/Globe";
 import CopyEmailButton from "@/components/CopyEmailButton";
 import { Frameworks } from "@/components/Frameworks";
+import { Globe } from "@/components/Globe";
 
 export default function About() {
   const grid2Container = useRef<HTMLDivElement>(null);
 
+  // id único para la sección (si necesitas anclar con "about", usa data-attr)
+  const sectionId = useId(); // p.ej. :r0:-about
+  const aboutId = `${sectionId}-about`;
+
   return (
-    <section className="c-space section-spacing" id="about">
+    <section
+      className="c-space section-spacing"
+      id={aboutId}
+      data-section="about"
+      aria-label="About Me section"
+    >
       <h2 className="text-heading">About Me</h2>
 
       <div className="mt-12 grid grid-cols-1 gap-4 md:auto-rows-[18rem] md:grid-cols-6">
         {/* Grid 1 */}
         <div className="grid-1 grid-default-color relative flex items-end">
-          <img
+          <Image
             src="/assets/coding-pov.png"
+            alt="imagen de codigo"
+            aria-hidden
+            width={800}
+            height={800}
+            quality={100}
+            sizes="100vw"
             className="absolute -right-[5rem] -top-[1rem] scale-[1.75] md:left-50 md:inset-y-10 md:scale-[3] lg:scale-[2.5]"
-            alt=""
           />
+
           <div className="z-10">
             <p className="headtext">Hi, I&apos;m Ali Sanati</p>
             <p className="subtext">
