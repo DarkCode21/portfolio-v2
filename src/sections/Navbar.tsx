@@ -44,7 +44,7 @@ export default function Navbar() {
             href="/"
             className="text-xl font-bold transition-colors text-neutral-400 hover:text-white"
           >
-            Ali
+            DarkCode
           </Link>
 
           <button
