@@ -1,15 +1,18 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
 
 const stats = [
-  { id: "exp", number: 3, text: "Años de experiencia" },
-  { id: "projects", number: 20, text: "Proyectos completados" },
-  { id: "tech", number: 20, text: "Tecnologías dominadas" },
-  { id: "commits", number: 850, text: "Code Commits" },
+  { id: "exp", number: 3 },
+  { id: "projects", number: 20 },
+  { id: "tech", number: 20 },
+  { id: "commits", number: 850 },
 ];
 
 const Stats = () => {
+  const t = useTranslations("Stats");
+
   return (
     <div className="max-w-6xl mx-auto pb-5">
       <div className="flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none">
@@ -26,10 +29,10 @@ const Stats = () => {
             />
             <p
               className={`${
-                item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
+                t(item.id).length < 15 ? "max-w-[100px]" : "max-w-[150px]"
               } leading-snug text-white/80`}
             >
-              {item.text}
+              {t(item.id)}
             </p>
           </div>
         ))}

@@ -17,7 +17,7 @@
     "lang_en": "EN"
   },
   "HeroText": {
-    "title": "Hola Soy Deyvi",
+    "title": "Hola, Soy Deyvi",
     "headingTop": "Un Desarrollador",
     "headingBottom1": "Full-Stack Creando",
     "headingTopMobile": "Construyendo",
@@ -27,5 +27,29 @@
     "pitch": "Me gusta convertir ideas en productos digitales que marquen la diferencia. Uniendo tecnología y diseño, creo experiencias web que inspiran confianza y generan impacto.",
     "download": "Descargar CV",
     "ariaDownload": "Descargar currículum en PDF"
+  },
+  "Stats": {
+    "exp": "Años de experiencia",
+    "projects": "Proyectos completados",
+    "tech": "Tecnologías dominadas",
+    "commits": "Code commits"
+  },
+  "About": {
+    "title": "Sobre mí",
+    "grid1_head": "Hola, Soy Deyvi",
+    "grid1_sub": "Durante los últimos 4 años he perfeccionado mis habilidades en frontend y backend para crear aplicaciones web dinámicas y funcionales.",
+    "grid2_main": "EL CÓDIGO ES ARTE",
+    "grid2_cards": {
+      "grasp": "GRASP",
+      "solid": "SOLID",
+      "patterns": "Patrones de diseño",
+      "principles": "Principios de diseño",
+      "srp": "SRP"
+    },
+    "grid3_head": "Zona horaria",
+    "grid3_sub": "Flexible para colaborar de manera remota con equipos de todo el mundo.",
+    "grid4_cta": "¿Quieres que colaboremos en tu próximo proyecto?",
+    "grid5_head": "Stack tecnológico",
+    "grid5_sub": "Trabajo con múltiples lenguajes, frameworks y herramientas que me permiten crear aplicaciones escalables y confiables."
   }
 }

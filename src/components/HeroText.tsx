@@ -78,7 +78,7 @@ export default function HeroText() {
           <div className="mb-8 xl:mb-8 contents">
             <Social
               containerStyles="flex gap-6"
-              iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
+              iconStyles="w-9 h-9 border border-white rounded-full flex justify-center items-center text-white cursor-pointer hover:bg-white hover:text-primary transition-colors duration-300"
             />
           </div>
         </div>

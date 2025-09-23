@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useId, useRef } from "react";
 
 import Card from "@/components/Card";
@@ -9,6 +10,7 @@ import { Frameworks } from "@/components/Frameworks";
 import { Globe } from "@/components/Globe";
 
 export default function About() {
+  const t = useTranslations("About");
   const grid2Container = useRef<HTMLDivElement>(null);
 
   const sectionId = useId();
@@ -21,7 +23,7 @@ export default function About() {
       data-section="about"
       aria-label="About Me section"
     >
-      <h2 className="text-heading">About Me</h2>
+      <h2 className="text-heading">{t("title")}</h2>
 
       <div className="mt-12 grid grid-cols-1 gap-4 md:auto-rows-[18rem] md:grid-cols-6">
         {/* Grid 1 */}
@@ -38,11 +40,8 @@ export default function About() {
           />
 
           <div className="z-10">
-            <p className="headtext">Hi, I&apos;m Ali Sanati</p>
-            <p className="subtext">
-              Over the last 4 years, I developed my frontend and backend dev
-              skills to deliver dynamic software and web applications.
-            </p>
+            <p className="headtext">{t("grid1_head")}</p>
+            <p className="subtext">{t("grid1_sub")}</p>
           </div>
           <div className="pointer-events-none absolute inset-x-0 -bottom-4 h-1/2 bg-gradient-to-t from-indigo sm:h-1/3" />
         </div>
@@ -54,32 +53,32 @@ export default function About() {
             className="flex h-full w-full items-center justify-center"
           >
             <p className="flex items-end text-5xl text-gray-500">
-              CODE IS CRAFT
+              {t("grid2_main")}
             </p>
 
             <Card
               style={{ rotate: "75deg", top: "30%", left: "20%" }}
-              text="GRASP"
+              text={t("grid2_cards.grasp")}
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-30deg", top: "60%", left: "45%" }}
-              text="SOLID"
+              text={t("grid2_cards.solid")}
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "90deg", bottom: "30%", left: "70%" }}
-              text="Design Patterns"
+              text={t("grid2_cards.patterns")}
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-45deg", top: "55%", left: "0%" }}
-              text="Design Principles"
+              text={t("grid2_cards.principles")}
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "20deg", top: "10%", left: "38%" }}
-              text="SRP"
+              text={t("grid2_cards.srp")}
               containerRef={grid2Container}
             />
             <Card
@@ -103,10 +102,8 @@ export default function About() {
         {/* Grid 3 */}
         <div className="grid-3 grid-black-color">
           <div className="z-10 w-[50%]">
-            <p className="headtext">Time Zone</p>
-            <p className="subtext">
-              I&apos;m based in Mars, and open to remote work worldwide
-            </p>
+            <p className="headtext">{t("grid3_head")}</p>
+            <p className="subtext">{t("grid3_sub")}</p>
           </div>
           <figure className="absolute left-[30%] top-[10%]">
             <Globe />
@@ -116,9 +113,7 @@ export default function About() {
         {/* Grid 4 */}
         <div className="grid-4 grid-special-color">
           <div className="size-full flex flex-col items-center justify-center gap-4">
-            <p className="headtext text-center">
-              Do you want to start a project together?
-            </p>
+            <p className="headtext text-center">{t("grid4_cta")}</p>
             <CopyEmailButton />
           </div>
         </div>
@@ -126,11 +121,8 @@ export default function About() {
         {/* Grid 5 */}
         <div className="grid-5 grid-default-color">
           <div className="z-10 w-[50%]">
-            <p className="headText">Tech Stack</p>
-            <p className="subtext">
-              I specialize in a variety of languages, frameworks, and tools that
-              allow me to build robust and scalable applications
-            </p>
+            <p className="headText">{t("grid5_head")}</p>
+            <p className="subtext">{t("grid5_sub")}</p>
           </div>
           <div className="absolute inset-y-0 start-[50%] h-full w-full md:inset-y-5 md:scale-125">
             <Frameworks />
