@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "¡Hola mundo!"
+  },
+  "Meta": {
+    "title": "Portfolio 3D",
+    "description": "Next 15 + R3F + Framer + Tailwind"
+  },
+  "Navbar": {
+    "brand": "DarkCode",
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "work": "Proyectos",
+    "contact": "Contacto",
+    "toggleMenu": "Abrir/cerrar menú",
+    "lang_es": "ES",
+    "lang_en": "EN"
+  },
+  "HeroText": {
+    "title": "Miguel — Full-Stack Developer",
+    "headingTop": "Soluciones web",
+    "headingBottom": "con foco en",
+    "headingTopMobile": "Construyendo",
+    "headingBottomMobile": "aplicaciones web",
+    "words": ["Seguras", "Modernas", "Escalables"],
+    "pitch": "Creo productos digitales rápidos, accesibles y listos para crecer. Cuido el detalle y el rendimiento para que tu negocio avance de verdad.",
+    "download": "Descargar CV",
+    "ariaDownload": "Descargar currículum en PDF"
+  }
+}

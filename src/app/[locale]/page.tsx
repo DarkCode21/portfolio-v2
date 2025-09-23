@@ -8,16 +8,16 @@ import Projects from "@/sections/Projects";
 import Testimonial from "@/sections/Testimonial";
 
 export default function HomePage() {
-	return (
-		<div className="container mx-auto max-w-7xl">
-			<Navbar />
-			<Hero />
-			<About />
-			<Projects />
-			<Experiences />
-			<Testimonial />
-			<Contact />
-			<Footer />
-		</div>
-	);
+  return (
+    <div className="container mx-auto max-w-7xl">
+      <Navbar />
+      <Hero />
+      <About />
+      <Projects />
+      <Experiences />
+      <Testimonial />
+      <Contact />
+      <Footer />
+    </div>
+  );
 }

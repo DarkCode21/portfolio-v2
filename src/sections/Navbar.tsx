@@ -4,28 +4,30 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useId, useState } from "react";
+import { useTranslations } from "next-intl";
 
 function Navigation() {
+  const t = useTranslations("Navbar");
   return (
     <ul className="nav-ul">
       <li className="nav-li">
         <a className="nav-link" href="#home">
-          Home
+          {t("home")}
         </a>
       </li>
       <li className="nav-li">
         <a className="nav-link" href="#about">
-          About
+          {t("about")}
         </a>
       </li>
       <li className="nav-li">
         <a className="nav-link" href="#work">
-          Work
+          {t("work")}
         </a>
       </li>
       <li className="nav-li">
         <a className="nav-link" href="#contact">
-          Contact
+          {t("contact")}
         </a>
       </li>
     </ul>

@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "Hello world!"
+  },
+  "Meta": {
+    "title": "3D Portfolio",
+    "description": "Next 15 + R3F + Framer + Tailwind"
+  },
+  "Navbar": {
+    "brand": "DarkCode",
+    "home": "Home",
+    "about": "About",
+    "work": "Work",
+    "contact": "Contact",
+    "toggleMenu": "Toggle menu",
+    "lang_es": "ES",
+    "lang_en": "EN"
+  },
+  "HeroText": {
+    "title": "Hi I'm Deyvi",
+    "headingTop": "Full-Stack Developer",
+    "headingBottom": "focused on",
+    "headingTopMobile": "Building",
+    "headingBottomMobile": "web applications",
+    "words": ["Secure", "Modern", "Scalable"],
+    "pitch": "I build fast, accessible, and growth-ready digital products. Detail and performance first—so your business actually moves forward.",
+    "download": "Download CV",
+    "ariaDownload": "Download résumé as PDF"
+  }
+}

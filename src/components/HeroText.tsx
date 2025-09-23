@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { FiDownload } from "react-icons/fi";
 import { FlipWords } from "./FlipWords";
 import Social from "./Social";
@@ -10,7 +11,9 @@ const variants = {
 };
 
 export default function HeroText() {
-  const words = ["Secure", "Modern", "Scalable"];
+  const t = useTranslations("HeroText");
+
+  const words = t.raw("words") as string[];
 
   return (
     <div className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text">
@@ -23,7 +26,7 @@ export default function HeroText() {
           animate="visible"
           transition={{ delay: 1 }}
         >
-          Hi I&apos;m Ali
+          Hi I'm Deyvi
         </motion.h1>
 
         <div className="flex flex-col items-start">
@@ -89,7 +92,7 @@ export default function HeroText() {
           animate="visible"
           transition={{ delay: 1 }}
         >
-          Hi, I&apos;m Ali
+          Hi, I'm Deyvi
         </motion.p>
 
         <div>
