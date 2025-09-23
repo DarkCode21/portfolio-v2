@@ -26,7 +26,7 @@ export default function HeroText() {
           animate="visible"
           transition={{ delay: 1 }}
         >
-          Hi I'm Deyvi
+          {t("title")}
         </motion.h1>
 
         <div className="flex flex-col items-start">
@@ -37,7 +37,7 @@ export default function HeroText() {
             animate="visible"
             transition={{ delay: 1.2 }}
           >
-            A Developer <br /> Dedicated to Crafting
+            {t("headingTop")} <br /> {t("headingBottom1")}
           </motion.p>
 
           <motion.div
@@ -59,21 +59,22 @@ export default function HeroText() {
             animate="visible"
             transition={{ delay: 1.8 }}
           >
-            Web Solutions
+            {t("headingBottom2")}
           </motion.p>
         </div>
 
-        <p className="max-w-[500px] text-xl my-9 text-white/80">
-          Apasionado por crear soluciones que combinan funcionalidad y estética.
-          Mi enfoque integral y atención al detalle generan resultados
-          confiables en entornos competitivos.
-        </p>
+        <p className="max-w-[500px] text-xl my-9 text-white/80">{t("pitch")}</p>
 
         <div className="flex flex-col xl:flex-row items-center gap-8">
-          <button type="button" className="uppercase flex items-center gap-2">
-            <span>Descargar CV</span>
+          <a
+            href="/cv.pdf"
+            download
+            aria-label={t("ariaDownload")}
+            className="uppercase flex items-center gap-2 px-5 py-3 border border-white rounded-full cursor-pointer hover:bg-white hover:text-primary transition-colors duration-300"
+          >
+            <span>{t("download")}</span>
             <FiDownload className="text-xl" />
-          </button>
+          </a>
           <div className="mb-8 xl:mb-8 contents">
             <Social
               containerStyles="flex gap-6"
@@ -92,7 +93,7 @@ export default function HeroText() {
           animate="visible"
           transition={{ delay: 1 }}
         >
-          Hi, I'm Deyvi
+          {t("title")}
         </motion.p>
 
         <div>
@@ -103,7 +104,7 @@ export default function HeroText() {
             animate="visible"
             transition={{ delay: 1.2 }}
           >
-            Building
+            {t("headingTopMobile")}
           </motion.p>
 
           <motion.div
@@ -114,7 +115,7 @@ export default function HeroText() {
           >
             <FlipWords
               words={words}
-              className="font-bold text-white text-7xl"
+              className="font-bold text-white text-6xl"
             />
           </motion.div>
 
@@ -125,7 +126,7 @@ export default function HeroText() {
             animate="visible"
             transition={{ delay: 1.8 }}
           >
-            Web Applications
+            {t("headingBottomMobile")}
           </motion.p>
         </div>
       </div>

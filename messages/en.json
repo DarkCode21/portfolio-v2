@@ -18,12 +18,13 @@
   },
   "HeroText": {
     "title": "Hi I'm Deyvi",
-    "headingTop": "Full-Stack Developer",
-    "headingBottom": "focused on",
+    "headingTop": "A Full-Stack",
+    "headingBottom1": "Developer creating",
     "headingTopMobile": "Building",
-    "headingBottomMobile": "web applications",
+    "headingBottomMobile": "Web Applications",
     "words": ["Secure", "Modern", "Scalable"],
-    "pitch": "I build fast, accessible, and growth-ready digital products. Detail and performance first—so your business actually moves forward.",
+    "headingBottom2": "Web Applications",
+    "pitch": "I enjoy turning ideas into digital products that make a difference. By combining technology and design, I create web experiences that inspire trust and generate impact.",
     "download": "Download CV",
     "ariaDownload": "Download résumé as PDF"
   }

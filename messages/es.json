@@ -17,13 +17,14 @@
     "lang_en": "EN"
   },
   "HeroText": {
-    "title": "Miguel — Full-Stack Developer",
-    "headingTop": "Soluciones web",
-    "headingBottom": "con foco en",
+    "title": "Hola Soy Deyvi",
+    "headingTop": "Un Desarrollador",
+    "headingBottom1": "Full-Stack Creando",
     "headingTopMobile": "Construyendo",
-    "headingBottomMobile": "aplicaciones web",
+    "headingBottomMobile": "Aplicaciones Web",
     "words": ["Seguras", "Modernas", "Escalables"],
-    "pitch": "Creo productos digitales rápidos, accesibles y listos para crecer. Cuido el detalle y el rendimiento para que tu negocio avance de verdad.",
+    "headingBottom2": "Aplicaciones Web",
+    "pitch": "Me gusta convertir ideas en productos digitales que marquen la diferencia. Uniendo tecnología y diseño, creo experiencias web que inspiran confianza y generan impacto.",
     "download": "Descargar CV",
     "ariaDownload": "Descargar currículum en PDF"
   }
