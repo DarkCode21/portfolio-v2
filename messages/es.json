@@ -37,7 +37,7 @@
   "About": {
     "title": "Sobre mí",
     "grid1_head": "Hola, Soy Deyvi",
-    "grid1_sub": "Durante los últimos 4 años he perfeccionado mis habilidades en frontend y backend para crear aplicaciones web dinámicas y funcionales.",
+    "grid1_sub": "Durante los últimos 3 años he perfeccionado mis habilidades en frontend y backend para crear aplicaciones web dinámicas y funcionales.",
     "grid2_main": "EL CÓDIGO ES ARTE",
     "grid2_cards": {
       "grasp": "GRASP",
@@ -51,5 +51,19 @@
     "grid4_cta": "¿Quieres que colaboremos en tu próximo proyecto?",
     "grid5_head": "Stack tecnológico",
     "grid5_sub": "Trabajo con múltiples lenguajes, frameworks y herramientas que me permiten crear aplicaciones escalables y confiables."
+  },
+  "Projects": {
+    "title": "Mis proyectos seleccionados",
+    "aria_label": "Sección de proyectos seleccionados",
+    "preview_alt": "Vista previa del proyecto"
+  },
+  "Project": {
+    "readMore": "Leer más",
+    "openAlt": "Abrir detalles del proyecto"
+  },
+  "ProjectDetails": {
+    "overlayClose": "Cerrar diálogo",
+    "close": "Cerrar",
+    "viewProject": "Ver proyecto"
   }
 }

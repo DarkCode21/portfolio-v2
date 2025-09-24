@@ -37,7 +37,7 @@
   "About": {
     "title": "About Me",
     "grid1_head": "Hi, I'm Deyvi",
-    "grid1_sub": "Over the last 4 years, I have sharpened my frontend and backend skills to deliver dynamic and reliable web applications.",
+    "grid1_sub": "Over the last 3 years, I have sharpened my frontend and backend skills to deliver dynamic and reliable web applications.",
     "grid2_main": "CODE IS CRAFT",
     "grid2_cards": {
       "grasp": "GRASP",
@@ -51,5 +51,19 @@
     "grid4_cta": "Do you want to start a project together?",
     "grid5_head": "Tech Stack",
     "grid5_sub": "I specialize in multiple languages, frameworks, and tools that let me build scalable and robust applications."
+  },
+  "Projects": {
+    "title": "My Selected Projects",
+    "aria_label": "Selected projects section",
+    "preview_alt": "Project preview"
+  },
+  "Project": {
+    "readMore": "Read More",
+    "openAlt": "Open project details"
+  },
+  "ProjectDetails": {
+    "overlayClose": "Close dialog",
+    "close": "Close",
+    "viewProject": "View Project"
   }
 }

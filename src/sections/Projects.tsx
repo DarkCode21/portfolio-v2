@@ -1,11 +1,13 @@
 "use client";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useEffect, useId, useState } from "react";
 import Project from "@/components/Project";
 import { myProjects } from "@/constants";
 
 export default function Projects() {
+  const t = useTranslations("Projects");
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const springX = useSpring(x, { damping: 10, stiffness: 50 });
@@ -41,10 +43,10 @@ export default function Projects() {
     <section
       id={`${sectionId}-work`}
       data-section="work"
-      aria-label="Selected projects section"
+      aria-label={t("aria_label")}
       className="relative c-space section-spacing"
     >
-      <h2 className="text-heading">My Selected Projects</h2>
+      <h2 className="text-heading">{t("title")}</h2>
       <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
 
       {myProjects.map((project) => (
@@ -59,7 +61,7 @@ export default function Projects() {
         >
           <Image
             src={preview}
-            alt="Project preview"
+            alt={t("preview_alt")}
             width={320}
             height={224}
             className="h-56 w-80 rounded-lg object-cover"
