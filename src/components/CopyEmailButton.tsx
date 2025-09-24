@@ -24,7 +24,7 @@ export default function CopyEmailButton() {
       onClick={copyToClipboard}
       whileHover={{ y: -5 }}
       whileTap={{ scale: 1.05 }}
-      className="relative w-[12rem] cursor-pointer overflow-hidden rounded-full bg-primary px-1 py-4 text-center text-sm font-extralight"
+      className="relative w-[14rem] cursor-pointer overflow-hidden rounded-full bg-primary px-1 py-4 text-center text-sm font-extralight"
     >
       <AnimatePresence mode="wait">
         {copied ? (
