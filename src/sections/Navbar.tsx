@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useId, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useId, useState } from "react";
 
 function Navigation() {
   const t = useTranslations("Navbar");

@@ -31,10 +31,12 @@ export default function Hero() {
         style={{ width: "100vw", height: "100vh" }}
       >
         <Canvas camera={{ position: [0, 1, 3] }}>
+          <ambientLight intensity={0.6} />
+          <directionalLight position={[5, 5, 5]} intensity={1.8} />
           <Suspense fallback={<Loader />}>
             <Float>
               <Astronaut
-                scale={isMobile ? 1.2 : 1.4}
+                scale={isMobile ? 1.2 : 0.1}
                 position={isMobile ? [0.2, -1.3, 0] : [1.6, -1.5, 0]}
                 rotation={[-Math.PI / 1.3, 0.9, 2.5]}
               />

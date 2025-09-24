@@ -50,7 +50,7 @@ export function Timeline({ data }: Props) {
             className="md:pt-40 md:gap-10 flex justify-start pt-10"
           >
             {/* left column (date/title) */}
-            <div className="sticky top-40 z-40 flex max-w-xs md:w/full lg:max-w-sm flex-col items-center self-start md:flex-row">
+            <div className="sticky top-40 z-40 flex max-w-xs md:w-full lg:max-w-sm flex-col items-center self-start md:flex-row">
               <div className="absolute -left-[15px] flex h-10 w-10 items-center justify-center rounded-full bg-midnight">
                 <div className="h-4 w-4 rounded-full border border-neutral-700 bg-neutral-800 p-2" />
               </div>
