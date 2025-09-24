@@ -52,6 +52,11 @@
     "grid5_head": "Stack tecnológico",
     "grid5_sub": "Trabajo con múltiples lenguajes, frameworks y herramientas que me permiten crear aplicaciones escalables y confiables."
   },
+  "CopyEmailButton": {
+    "copy": "Copiar correo",
+    "copied": "Correo copiado",
+    "iconAlt": "Icono de copiar"
+  },
   "Projects": {
     "title": "Mis proyectos seleccionados",
     "aria_label": "Sección de proyectos seleccionados",

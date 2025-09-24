@@ -52,6 +52,11 @@
     "grid5_head": "Tech Stack",
     "grid5_sub": "I specialize in multiple languages, frameworks, and tools that let me build scalable and robust applications."
   },
+  "CopyEmailButton": {
+    "copy": "Copy Email Address",
+    "copied": "Email has Copied",
+    "iconAlt": "Copy icon"
+  },
   "Projects": {
     "title": "My Selected Projects",
     "aria_label": "Selected projects section",
