@@ -65,5 +65,49 @@
     "overlayClose": "Close dialog",
     "close": "Close",
     "viewProject": "View Project"
+  },
+  "Experiences": {
+    "title": "My Work Experience",
+    "aria_label": "Work experience section"
+  },
+  "Testimonial": {
+    "title": "Hear From My Clients",
+    "aria_label": "Testimonials",
+    "avatarAlt": "{name} avatar"
+  },
+  "Contact": {
+    "aria_label": "Contact section",
+    "title": "Let's Talk",
+    "intro": "Whether you want to build a new site, improve your current platform, or bring a unique project to life, I'm here to help.",
+    "fields": {
+      "name": {
+        "label": "Full Name",
+        "placeholder": "John Doe"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "john@example.com"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Share your thoughts..."
+      }
+    },
+    "cta": {
+      "send": "Send",
+      "sending": "Sending..."
+    },
+    "alerts": {
+      "success": "Your message has been sent!",
+      "genericError": "Something went wrong. Please try again later."
+    },
+    "errors": {
+      "notConfigured": "Email service not configured. Please set NEXT_PUBLIC_EMAILJS_* env vars."
+    }
+  },
+  "Footer": {
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "copyright": "© {year} {brand}. All rights reserved."
   }
 }

@@ -65,5 +65,49 @@
     "overlayClose": "Cerrar diálogo",
     "close": "Cerrar",
     "viewProject": "Ver proyecto"
+  },
+  "Experiences": {
+    "title": "Mi experiencia laboral",
+    "aria_label": "Sección de experiencia laboral"
+  },
+  "Testimonial": {
+    "title": "Lo que dicen mis clientes",
+    "aria_label": "Sección de testimonios",
+    "avatarAlt": "Avatar de {name}"
+  },
+  "Contact": {
+    "aria_label": "Sección de contacto",
+    "title": "Hablemos",
+    "intro": "¿Buscas crear una web, mejorar tu plataforma actual o lanzar un proyecto único? Estoy aquí para ayudarte.",
+    "fields": {
+      "name": {
+        "label": "Nombre completo",
+        "placeholder": "Juan Pérez"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "juan@ejemplo.com"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Cuéntame tu idea..."
+      }
+    },
+    "cta": {
+      "send": "Enviar",
+      "sending": "Enviando..."
+    },
+    "alerts": {
+      "success": "¡Tu mensaje ha sido enviado!",
+      "genericError": "Algo salió mal. Inténtalo de nuevo más tarde."
+    },
+    "errors": {
+      "notConfigured": "Servicio de email no configurado. Define las variables NEXT_PUBLIC_EMAILJS_*."
+    }
+  },
+  "Footer": {
+    "terms": "Términos y Condiciones",
+    "privacy": "Política de Privacidad",
+    "copyright": "© {year} {brand}. Todos los derechos reservados."
   }
 }

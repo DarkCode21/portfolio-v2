@@ -1,16 +1,20 @@
 "use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { mySocials } from "@/constants";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+
   return (
     <section className="flex flex-wrap items-center justify-between gap-5 pb-3 text-sm text-neutral-400 c-space">
       <div className="mb-4 bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
 
       <div className="flex gap-2">
-        <p>Terms &amp; Conditions</p>
+        <p>{t("terms")}</p>
         <p>|</p>
-        <p>Privacy Policy</p>
+        <p>{t("privacy")}</p>
       </div>
 
       <div className="flex gap-3">
@@ -34,7 +38,9 @@ export default function Footer() {
         ))}
       </div>
 
-      <p>© 2025 Ali. All rights reserved.</p>
+      <p>
+        {t("copyright", { year: new Date().getFullYear(), brand: "DarkCode" })}
+      </p>
     </section>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useId } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -20,6 +21,7 @@ function ReviewCard({
   username: string;
   body: string;
 }) {
+  const t = useTranslations("Testimonial");
   return (
     <figure
       className={twMerge(
@@ -33,7 +35,7 @@ function ReviewCard({
           width={32}
           height={32}
           src={img}
-          alt={`${name} avatar`}
+          alt={t("avatarAlt", { name })}
         />
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium text-white">
@@ -49,15 +51,16 @@ function ReviewCard({
 
 export default function Testimonial() {
   const sectionId = useId();
+  const t = useTranslations("Testimonial");
 
   return (
     <section
       id={`${sectionId}-testimonials`}
       data-section="testimonials"
       className="c-space mt-25 md:mt-35"
-      aria-label="Testimonials"
+      aria-label={t("aria_label")}
     >
-      <h2 className="text-heading">Hear From My Clients</h2>
+      <h2 className="text-heading">{t("title")}</h2>
 
       <div className="relative mt-12 flex w-full flex-col items-center justify-center overflow-hidden">
         <Marquee pauseOnHover className="[--duration:20s]">

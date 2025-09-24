@@ -1,5 +1,6 @@
 "use client";
 import emailjs from "@emailjs/browser";
+import { useTranslations } from "next-intl";
 import { useId, useState } from "react";
 import Alert from "@/components/Alert";
 import { Particles } from "@/components/Particles";
@@ -7,6 +8,7 @@ import { Particles } from "@/components/Particles";
 type AlertType = "success" | "danger";
 
 export default function Contact() {
+  const t = useTranslations("Contact");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,10 +50,7 @@ export default function Contact() {
 
     if (!serviceId || !templateId || !publicKey) {
       setIsLoading(false);
-      showAlertMessage(
-        "danger",
-        "Email service not configured. Please set NEXT_PUBLIC_EMAILJS_* env vars."
-      );
+      showAlertMessage("danger", t("errors.notConfigured"));
       return;
     }
 
@@ -61,9 +60,9 @@ export default function Contact() {
         templateId,
         {
           from_name: formData.name,
-          to_name: "Ali",
+          to_name: "Deyvi",
           from_email: formData.email,
-          to_email: "AliSanatiDev@gmail.com",
+          to_email: "deyvi132002@gmail.com",
           message: formData.message,
         },
         { publicKey }
@@ -71,11 +70,11 @@ export default function Contact() {
 
       setIsLoading(false);
       setFormData({ name: "", email: "", message: "" });
-      showAlertMessage("success", "Your message has been sent!");
+      showAlertMessage("success", t("alerts.success"));
     } catch (err) {
       console.error(err);
       setIsLoading(false);
-      showAlertMessage("danger", "Something went wrong!");
+      showAlertMessage("danger", t("alerts.genericError"));
     }
   };
 
@@ -84,7 +83,7 @@ export default function Contact() {
       className="relative flex items-center c-space section-spacing"
       id={`${sectionId}-contact`}
       data-section="contact"
-      aria-label="Contact section"
+      aria-label={t("aria_label")}
     >
       <Particles
         className="absolute inset-0 -z-50"
@@ -98,25 +97,21 @@ export default function Contact() {
 
       <div className="mx-auto flex max-w-md flex-col items-center justify-center rounded-2xl border border-white/10 bg-primary p-5">
         <div className="mb-10 flex w-full flex-col items-start gap-5">
-          <h2 className="text-heading">Let&apos;s Talk</h2>
-          <p className="font-normal text-neutral-400">
-            Whether you&apos;re looking to build a new website, improve your
-            existing platform, or bring a unique project to life, I&apos;m here
-            to help.
-          </p>
+          <h2 className="text-heading">{t("title")}</h2>
+          <p className="font-normal text-neutral-400">{t("intro")}</p>
         </div>
 
         <form className="w-full" onSubmit={handleSubmit}>
           <div className="mb-5">
             <label htmlFor={nameId} className="field-label">
-              Full Name
+              {t("fields.name.label")}
             </label>
             <input
               id={nameId}
               name="name"
               type="text"
               className="field-input field-input-focus"
-              placeholder="John Doe"
+              placeholder={t("fields.name.placeholder")}
               autoComplete="name"
               value={formData.name}
               onChange={handleChange}
@@ -126,14 +121,14 @@ export default function Contact() {
 
           <div className="mb-5">
             <label htmlFor={emailId} className="field-label">
-              Email
+              {t("fields.email.label")}
             </label>
             <input
               id={emailId}
               name="email"
               type="email"
               className="field-input field-input-focus"
-              placeholder="john@example.com"
+              placeholder={t("fields.email.placeholder")}
               autoComplete="email"
               value={formData.email}
               onChange={handleChange}
@@ -143,14 +138,14 @@ export default function Contact() {
 
           <div className="mb-5">
             <label htmlFor={messageId} className="field-label">
-              Message
+              {t("fields.message.label")}
             </label>
             <textarea
               id={messageId}
               name="message"
               rows={4}
               className="field-input field-input-focus"
-              placeholder="Share your thoughts..."
+              placeholder={t("fields.message.placeholder")}
               autoComplete="off"
               value={formData.message}
               onChange={handleChange}
@@ -163,7 +158,7 @@ export default function Contact() {
             className="w-full cursor-pointer rounded-md bg-radial from-lavender to-royal px-1 py-3 text-lg hover-animation text-center"
             disabled={isLoading}
           >
-            {!isLoading ? "Send" : "Sending..."}
+            {!isLoading ? t("cta.send") : t("cta.sending")}
           </button>
         </form>
       </div>
