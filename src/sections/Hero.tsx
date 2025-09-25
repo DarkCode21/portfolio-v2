@@ -36,9 +36,10 @@ export default function Hero() {
           <Suspense fallback={<Loader />}>
             <Float>
               <Astronaut
-                scale={isMobile ? 1.2 : 0.1}
-                position={isMobile ? [0.2, -1.3, 0] : [1.6, -1.5, 0]}
-                rotation={[-Math.PI / 1.3, 0.9, 2.5]}
+                scale={isMobile ? 0.09 : 0.2}
+                targetY={0.5}
+                position={isMobile ? [0.2, -1.3, 0] : [2.8, 5.5, -2.0]}
+                rotation={[-Math.PI / 1.2, 1.3, 2.5]}
               />
             </Float>
             <Rig />
