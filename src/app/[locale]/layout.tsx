@@ -15,7 +15,7 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: any;
+  params: { locale: "es" | "en" };
 }) {
   const { locale } = await params;
   if (!routing.locales.includes(locale as any)) {
@@ -24,7 +24,7 @@ export default async function RootLayout({
 
   const messages = await getMessages();
   return (
-    <html lang="es">
+    <html lang={locale}>
       <body className="min-h-dvh bg-primary text-white antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}
