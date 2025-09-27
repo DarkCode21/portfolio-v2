@@ -12,7 +12,7 @@ const Earth = memo(function Earth() {
   );
 });
 
-useGLTF.preload("/planet/scene.gltf");
+useGLTF.preload("/models/planet/scene.gltf");
 
 export default function EarthCanvas() {
   return (
