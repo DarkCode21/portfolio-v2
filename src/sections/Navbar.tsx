@@ -3,10 +3,11 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
 import { useEffect, useId, useMemo, useState } from "react";
+import { Link, usePathname } from "@/i18n/routing";
+
+type LocaleCode = "es" | "en";
 
 function Navigation() {
   const t = useTranslations("Navbar");
@@ -41,7 +42,12 @@ function LanguageSwitcher() {
   const locale = useLocale();
   const [open, setOpen] = useState(false);
 
-  const locales = useMemo(
+  const locales: ReadonlyArray<{
+    code: LocaleCode;
+    name: string;
+    short: string;
+    flag: string;
+  }> = useMemo(
     () => [
       {
         code: "es",
@@ -59,10 +65,11 @@ function LanguageSwitcher() {
     []
   );
 
-  const current = useMemo(
-    () => locales.find((l) => l.code === locale) ?? locales[0],
-    [locale, locales]
-  );
+  const current =
+    locales.find((l) => l.code === (locale as LocaleCode)) ?? locales[0];
+
+  const hash = typeof window !== "undefined" ? window.location.hash : "";
+  const qs = typeof window !== "undefined" ? window.location.search : "";
 
   return (
     <div className="relative">
@@ -91,28 +98,33 @@ function LanguageSwitcher() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 6 }}
           transition={{ duration: 0.16 }}
-          className="absolute right-0 mt-2 w-40 overflow-hidden rounded-xl border border-white/10 bg-neutral-900/80 backdrop-blur-md shadow-xl"
+          className="absolute right-0 mt-2 w-40 overflow-hidden border border-white/10 bg-neutral-900/80 backdrop-blur-md shadow-xl rounded-none sm:rounded-xl"
           role="listbox"
         >
-          {locales.map((l) => (
-            <li key={l.code}>
-              <Link
-                href={pathname}
-                locale={l.code as any}
-                className="flex items-center gap-2 px-3 py-2 text-sm text-neutral-200 hover:bg-white/10"
-                onClick={() => setOpen(false)}
-              >
-                <Image
-                  src={l.flag}
-                  alt={`${l.name} flag`}
-                  width={18}
-                  height={18}
-                  className="rounded-full"
-                />
-                <span>{l.name}</span>
-              </Link>
-            </li>
-          ))}
+          {locales.map((l) => {
+            const basePath = pathname.replace(/^\/(es|en)(?=\/|$)/, "") || "/";
+            const href = `${basePath}${qs}${hash}`;
+
+            return (
+              <li key={l.code}>
+                <Link
+                  href={href}
+                  locale={l.code}
+                  className="flex items-center gap-2 px-3 py-2 text-sm text-neutral-200 hover:bg-white/10"
+                  onClick={() => setOpen(false)}
+                >
+                  <Image
+                    src={l.flag}
+                    alt={`${l.name} flag`}
+                    width={18}
+                    height={18}
+                    className="rounded-full"
+                  />
+                  <span>{l.name}</span>
+                </Link>
+              </li>
+            );
+          })}
         </motion.ul>
       )}
     </div>
@@ -122,6 +134,7 @@ function LanguageSwitcher() {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const mobileNavId = useId();
 
   useEffect(() => {
@@ -131,11 +144,19 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
   return (
     <motion.div
       className="fixed left-0 right-0 z-20"
       initial={false}
-      animate={{ top: scrolled ? 0 : 16 }}
+      animate={{ top: isMobile ? 0 : scrolled ? 0 : 16 }}
       transition={{ type: "spring", stiffness: 260, damping: 30 }}
     >
       <motion.div
@@ -143,15 +164,15 @@ export default function Navbar() {
         style={{ width: "100%" }}
         initial={false}
         animate={{
-          maxWidth: scrolled ? "100%" : "80rem",
-          borderRadius: scrolled ? "0rem" : "9999px",
-          marginLeft: scrolled ? "0rem" : "auto",
-          marginRight: scrolled ? "0rem" : "auto",
+          maxWidth: isMobile ? "100%" : scrolled ? "100%" : "80rem",
+          borderRadius: isMobile ? "0rem" : scrolled ? "0rem" : "9999px",
+          marginLeft: isMobile ? "0rem" : scrolled ? "0rem" : "auto",
+          marginRight: isMobile ? "0rem" : scrolled ? "0rem" : "auto",
         }}
         transition={{ type: "spring", stiffness: 260, damping: 30 }}
       >
         <div className="c-space">
-          <div className="grid grid-cols-3 items-center py-2 sm:py-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 items-center py-2 sm:py-2">
             <div className="flex items-center gap-2">
               <Link href="/" className="flex items-center gap-2 text-white">
                 <Image
@@ -174,10 +195,11 @@ export default function Navbar() {
               <div className="hidden sm:block">
                 <LanguageSwitcher />
               </div>
+
               <button
                 type="button"
                 onClick={() => setIsOpen((v) => !v)}
-                className="flex cursor-pointer text-neutral-400 hover:text-white focus:outline-none sm:hidden"
+                className="sm:hidden ml-auto flex cursor-pointer text-neutral-200 hover:text-white focus:outline-none"
                 aria-label="Toggle menu"
                 aria-expanded={isOpen}
                 aria-controls={mobileNavId}
@@ -195,20 +217,27 @@ export default function Navbar() {
           </div>
         </div>
 
+        {/* Panel móvil */}
         {isOpen && (
           <motion.div
-            className="block overflow-hidden text-center sm:hidden"
+            className="block sm:hidden text-center"
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             style={{ maxHeight: "100vh" }}
             transition={{ duration: 0.3 }}
           >
-            <nav id={mobileNavId} className="pb-3" aria-label="Primary mobile">
-              <Navigation />
-            </nav>
+            <div className=" bg-primary/40 rounded-none">
+              <nav
+                id={mobileNavId}
+                className="pb-3"
+                aria-label="Primary mobile"
+              >
+                <Navigation />
+              </nav>
 
-            <div className="flex justify-center pb-4">
-              <LanguageSwitcher />
+              <div className="flex justify-center pb-4">
+                <LanguageSwitcher />
+              </div>
             </div>
           </motion.div>
         )}
