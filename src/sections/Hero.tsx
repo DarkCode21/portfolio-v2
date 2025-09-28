@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useId } from "react";
+import { Suspense } from "react";
 
 import { Float } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -15,11 +15,11 @@ import Astronaut from "@/components/three/models/Astronaut";
 
 export default function Hero() {
   const isMobile = useMediaQuery({ maxWidth: 853 });
-  const sectionId = useId();
 
   return (
+    // biome-ignore lint/correctness/useUniqueElementIds: ID estable para anclaje (#home) y deep-link
     <section
-      id={`${sectionId}-home`}
+      id="home"
       data-section="home"
       aria-label="Hero section"
       className="flex items-start justify-center min-h-screen overflow-hidden md:items-start md:justify-start c-space"
@@ -37,7 +37,7 @@ export default function Hero() {
             <Float>
               <Astronaut
                 scale={isMobile ? 0.08 : 0.15}
-                targetY={isMobile ? 0.23 : 0.55}
+                targetY={isMobile ? 0.23 : 0.41}
                 position={isMobile ? [-0.13, -1.5, 0] : [2, 5.5, -2.0]}
                 rotation={[Math.PI / 0.2, 3.8, 3.5]}
               />

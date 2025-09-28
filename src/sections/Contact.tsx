@@ -1,8 +1,8 @@
 // /components/Contact.tsx
 "use client";
 
-import dynamic from "next/dynamic";
 import emailjs from "@emailjs/browser";
+import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 import { useId, useState } from "react";
 import Alert from "@/components/Alert";
@@ -29,8 +29,7 @@ export default function Contact() {
   const [alertType, setAlertType] = useState<AlertType>("success");
   const [alertMessage, setAlertMessage] = useState("");
 
-  // IDs únicos (evita literales)
-  const sectionId = useId();
+  // IDs únicos
   const nameId = useId();
   const emailId = useId();
   const messageId = useId();
@@ -88,9 +87,10 @@ export default function Contact() {
   };
 
   return (
+    // biome-ignore lint/correctness/useUniqueElementIds: ID estable para anclaje (#contact) y deep-link
     <section
       className="relative flex items-center c-space section-spacing"
-      id={`${sectionId}-contact`}
+      id="contact"
       data-section="contact"
       aria-label={t("aria_label")}
     >
@@ -104,9 +104,7 @@ export default function Contact() {
 
       {showAlert && <Alert type={alertType} text={alertMessage} />}
 
-      {/* Grid 2 columnas: izquierda formulario, derecha planeta */}
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-8 lg:grid-cols-2">
-        {/* Columna izquierda: formulario */}
         <div className="flex items-center">
           <div className="w-full rounded-2xl border border-white/10 bg-primary p-6">
             <div className="mb-10 flex w-full flex-col items-start gap-5">
@@ -177,7 +175,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Columna derecha: planeta */}
         <div className="relative content-center">
           <div className="h-[360px] p-2 sm:h-[420px] md:h-[520px]">
             <EarthCanvas />

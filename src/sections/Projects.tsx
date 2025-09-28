@@ -2,7 +2,7 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useState } from "react";
 import Project from "@/components/Project";
 import { myProjects } from "@/constants";
 
@@ -37,14 +37,13 @@ export default function Projects() {
     };
   }, [x, y]);
 
-  const sectionId = useId();
-
   return (
+    // biome-ignore lint/correctness/useUniqueElementIds: ID estable para anclaje (#work) y deep-link
     <section
-      id={`${sectionId}-work`}
+      id="work"
       data-section="work"
       aria-label={t("aria_label")}
-      className="relative c-space section-spacing"
+      className="relative c-space section-spacing scroll-mt-22"
     >
       <h2 className="text-heading">{t("title")}</h2>
       <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />

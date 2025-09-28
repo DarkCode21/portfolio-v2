@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useId, useRef } from "react";
+import { useRef } from "react";
 
 import Card from "@/components/Card";
 import CopyEmailButton from "@/components/CopyEmailButton";
@@ -13,13 +13,11 @@ export default function About() {
   const t = useTranslations("About");
   const grid2Container = useRef<HTMLDivElement>(null);
 
-  const sectionId = useId();
-  const aboutId = `${sectionId}-about`;
-
   return (
+    // biome-ignore lint/correctness/useUniqueElementIds: Necesitamos un ID estable para anclaje y deep-link
     <section
-      className="c-space section-spacing"
-      id={aboutId}
+      id="about"
+      className="c-space section-spacing scroll-mt-16"
       data-section="about"
       aria-label="About Me section"
     >

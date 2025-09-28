@@ -14,22 +14,22 @@ function Navigation() {
   return (
     <ul className="nav-ul flex items-center gap-6">
       <li className="nav-li">
-        <a className="nav-link" href="#home">
+        <a className="nav-link text-neutral-300" href="#home">
           {t("home")}
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#about">
+        <a className="nav-link text-neutral-300" href="#about">
           {t("about")}
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#work">
+        <a className="nav-link text-neutral-300" href="#work">
           {t("work")}
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#contact">
+        <a className="nav-link text-neutral-300" href="#contact">
           {t("contact")}
         </a>
       </li>
@@ -98,7 +98,7 @@ function LanguageSwitcher() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 6 }}
           transition={{ duration: 0.16 }}
-          className="absolute right-0 mt-2 w-40 overflow-hidden border border-white/10 bg-neutral-900/80 backdrop-blur-md shadow-xl rounded-none sm:rounded-xl"
+          className="absolute right-0 mt-2 w-40 overflow-hidden border border-white/10 bg-neutral-900/80 backdrop-blur-md shadow-xl rounded-none md:rounded-xl"
           role="listbox"
         >
           {locales.map((l) => {
@@ -145,7 +145,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 640px)");
+    const mq = window.matchMedia("(max-width: 768px)");
     const update = () => setIsMobile(mq.matches);
     update();
     mq.addEventListener("change", update);
@@ -172,7 +172,7 @@ export default function Navbar() {
         transition={{ type: "spring", stiffness: 260, damping: 30 }}
       >
         <div className="c-space">
-          <div className="grid grid-cols-2 sm:grid-cols-3 items-center py-2 sm:py-2">
+          <div className="grid grid-cols-2 md:grid-cols-3 items-center py-2 md:py-2">
             <div className="flex items-center gap-2">
               <Link href="/" className="flex items-center gap-2 text-white">
                 <Image
@@ -187,19 +187,19 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <nav className="hidden sm:flex justify-center" aria-label="Primary">
+            <nav className="hidden md:flex justify-center" aria-label="Primary">
               <Navigation />
             </nav>
 
             <div className="ml-auto flex items-center gap-2">
-              <div className="hidden sm:block">
+              <div className="hidden md:block">
                 <LanguageSwitcher />
               </div>
 
               <button
                 type="button"
                 onClick={() => setIsOpen((v) => !v)}
-                className="sm:hidden ml-auto flex cursor-pointer text-neutral-200 hover:text-white focus:outline-none"
+                className="md:hidden ml-auto flex cursor-pointer text-neutral-200 hover:text-white focus:outline-none"
                 aria-label="Toggle menu"
                 aria-expanded={isOpen}
                 aria-controls={mobileNavId}
@@ -220,7 +220,7 @@ export default function Navbar() {
         {/* Panel móvil */}
         {isOpen && (
           <motion.div
-            className="block sm:hidden text-center"
+            className="block md:hidden text-center"
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             style={{ maxHeight: "100vh" }}
