@@ -29,6 +29,11 @@ function Navigation() {
         </a>
       </li>
       <li className="nav-li">
+        <a className="nav-link text-neutral-300" href="#experiences">
+          {t("experiences")}
+        </a>
+      </li>
+      <li className="nav-li">
         <a className="nav-link text-neutral-300" href="#contact">
           {t("contact")}
         </a>
@@ -172,8 +177,8 @@ export default function Navbar() {
         transition={{ type: "spring", stiffness: 260, damping: 30 }}
       >
         <div className="c-space">
-          <div className="grid grid-cols-2 md:grid-cols-3 items-center py-2 md:py-2">
-            <div className="flex items-center gap-2">
+          <div className="grid grid-cols-2 md:grid-cols-[auto_1fr_auto] items-center py-2">
+            <div className="flex items-center gap-2 col-start-1">
               <Link href="/" className="flex items-center gap-2 text-white">
                 <Image
                   src="/assets/logos/darkcode.png"
@@ -187,11 +192,14 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <nav className="hidden md:flex justify-center" aria-label="Primary">
+            <nav
+              className="hidden md:flex justify-center col-start-2"
+              aria-label="Primary"
+            >
               <Navigation />
             </nav>
 
-            <div className="ml-auto flex items-center gap-2">
+            <div className="ml-auto flex items-center col-start-3 gap-2">
               <div className="hidden md:block">
                 <LanguageSwitcher />
               </div>
