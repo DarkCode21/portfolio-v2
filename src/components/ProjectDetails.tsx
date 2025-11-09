@@ -114,7 +114,7 @@ export default function ProjectDetails({
                   alt={tag.name}
                   width={40}
                   height={40}
-                  className="size-10 rounded-lg hover-animation object-contain"
+                  className="size-8 rounded-lg hover-animation object-contain"
                 />
               ))}
             </div>

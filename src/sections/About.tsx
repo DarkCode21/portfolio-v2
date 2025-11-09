@@ -81,17 +81,17 @@ export default function About() {
             />
             <Card
               style={{ rotate: "30deg", top: "70%", left: "70%" }}
-              image="/assets/logos/csharp-pink.png"
+              image="/assets/logos/laravel.svg"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-              image="/assets/logos/dotnet-pink.png"
+              image="/assets/logos/nextjs.svg"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-              image="/assets/logos/blazor-pink.png"
+              image="/assets/logos/react.svg"
               containerRef={grid2Container}
             />
           </div>

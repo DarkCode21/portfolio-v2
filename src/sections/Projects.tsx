@@ -63,7 +63,7 @@ export default function Projects() {
             alt={t("preview_alt")}
             width={320}
             height={224}
-            className="h-56 w-80 rounded-lg object-cover"
+            className="h-48 w-80 rounded-lg object-cover"
             priority
           />
         </motion.div>
