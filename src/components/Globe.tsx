@@ -157,3 +157,4 @@ export function Globe({ className, config = GLOBE_CONFIG }: Props) {
 		</div>
 	);
 }
+
