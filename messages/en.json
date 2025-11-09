@@ -18,7 +18,7 @@
     "lang_en": "EN"
   },
   "HeroText": {
-    "title": "Hi I'm Deyvi",
+    "title": "Hi I'm Dark",
     "headingTop": "A Full-Stack",
     "headingBottom1": "Developer creating",
     "headingTopMobile": "Building",
@@ -37,7 +37,7 @@
   },
   "About": {
     "title": "About Me",
-    "grid1_head": "Hi, I'm Deyvi",
+    "grid1_head": "Hi, I'm Dark",
     "grid1_sub": "Over the last 3 years, I have sharpened my frontend and backend skills to deliver dynamic and reliable web applications.",
     "grid2_main": "CODE IS CRAFT",
     "grid2_cards": {

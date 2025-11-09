@@ -1,4 +1,3 @@
-// /components/Contact.tsx
 "use client";
 
 import emailjs from "@emailjs/browser";
@@ -68,7 +67,7 @@ export default function Contact() {
         templateId,
         {
           from_name: formData.name,
-          to_name: "Deyvi",
+          to_name: "Dark",
           from_email: formData.email,
           to_email: "deyvi132002@gmail.com",
           message: formData.message,
