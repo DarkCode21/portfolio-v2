@@ -157,15 +157,19 @@ export const myProjects: Project[] = [
 ];
 
 export const mySocials: Social[] = [
-  { name: "WhatsApp", href: "", icon: "/assets/socials/whatsApp.svg" },
+  {
+    name: "WhatsApp",
+    href: "https://wa.me/51961319954?text=Hola%20Deyvi%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto%20de%20desarrollo%20de%20software.",
+    icon: "/assets/socials/whatsApp.svg",
+  },
   {
     name: "Linkedin",
-    href: "https://www.linkedin.com/in/ali-sanati/",
+    href: "https://www.linkedin.com/in/deyvi-villegas/",
     icon: "/assets/socials/linkedIn.svg",
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/ali.sanatidev/reels/",
+    href: "https://www.instagram.com/deyvi_v_/",
     icon: "/assets/socials/instagram.svg",
   },
 ];
