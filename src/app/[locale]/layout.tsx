@@ -7,20 +7,25 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
 export const metadata: Metadata = {
-  title: "DarkCode | Full-Stack Developer Portfolio",
+  metadataBase: new URL("https://darkcode-portfolio.vercel.app"),
+  title: {
+    default: "DarkCode | Full-Stack Developer Portfolio",
+    template: "%s | DarkCode",
+  },
   description:
     "Portfolio de DarkCode, desarrollador full-stack especializado en Next.js, Laravel y aplicaciones web modernas, seguras y escalables.",
   openGraph: {
     title: "DarkCode | Full-Stack Developer Portfolio",
     description:
       "Portfolio de DarkCode, desarrollador full-stack especializado en Next.js, Laravel y aplicaciones web modernas, seguras y escalables.",
-    url: "https://darkcode-portfolio.vercel.app",
+    url: "https://darkcode-portfolio.vercel.app/",
     siteName: "DarkCode",
     images: [
       {
-        url: "https://darkcode-portfolio.vercel.app/og-image.jpg",
+        url: "/og-darkcode.jpg",
         width: 1200,
         height: 630,
+        alt: "DarkCode - Full-Stack Developer Portfolio",
       },
     ],
     locale: "es_ES",
@@ -31,7 +36,7 @@ export const metadata: Metadata = {
     title: "DarkCode | Full-Stack Developer Portfolio",
     description:
       "Portfolio de DarkCode, desarrollador full-stack especializado en Next.js, Laravel y aplicaciones web modernas, seguras y escalables.",
-    images: ["https://darkcode-portfolio.vercel.app/og-image.jpg"],
+    images: ["/og-darkcode.jpg"],
   },
 };
 
