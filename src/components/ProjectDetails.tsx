@@ -31,7 +31,6 @@ export default function ProjectDetails({
   const subIdPrefix = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
 
-  // Cerrar con Escape
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeModal();
@@ -49,7 +48,7 @@ export default function ProjectDetails({
       <button
         type="button"
         onClick={closeModal}
-        aria-label="Close dialog"
+        aria-label={t("overlayClose")}
         className="absolute inset-0 -z-10 cursor-default"
       />
 
@@ -67,7 +66,7 @@ export default function ProjectDetails({
           type="button"
           onClick={closeModal}
           className="absolute right-5 top-5 rounded-sm bg-midnight p-2 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-white/40"
-          aria-label="Close"
+          aria-label={t("close")}
         >
           <Image
             src="/assets/close.svg"

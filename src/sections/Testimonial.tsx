@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useId } from "react";
@@ -52,6 +53,7 @@ function ReviewCard({
 export default function Testimonial() {
   const sectionId = useId();
   const t = useTranslations("Testimonial");
+  const tItems = useTranslations("Testimonial.items");
 
   return (
     <section
@@ -64,15 +66,39 @@ export default function Testimonial() {
 
       <div className="relative mt-12 flex w-full flex-col items-center justify-center overflow-hidden">
         <Marquee pauseOnHover className="[--duration:20s]">
-          {firstRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
+          {firstRow.map((review) => {
+            const name = tItems(`${review.key}.name`);
+            const username = tItems(`${review.key}.username`);
+            const body = tItems(`${review.key}.body`);
+
+            return (
+              <ReviewCard
+                key={review.key}
+                img={review.img}
+                name={name}
+                username={username}
+                body={body}
+              />
+            );
+          })}
         </Marquee>
 
         <Marquee reverse pauseOnHover className="[--duration:20s]">
-          {secondRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
+          {secondRow.map((review) => {
+            const name = tItems(`${review.key}.name`);
+            const username = tItems(`${review.key}.username`);
+            const body = tItems(`${review.key}.body`);
+
+            return (
+              <ReviewCard
+                key={review.key}
+                img={review.img}
+                name={name}
+                username={username}
+                body={body}
+              />
+            );
+          })}
         </Marquee>
 
         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-primary" />
@@ -81,6 +107,3 @@ export default function Testimonial() {
     </section>
   );
 }
-
-
-

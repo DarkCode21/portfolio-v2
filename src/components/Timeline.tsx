@@ -1,7 +1,8 @@
 "use client";
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import type { Experience } from "@/constants";
+import type { Experience } from "@/sections/Experiences";
 
 type Props = { data: Experience[] };
 
@@ -38,8 +39,7 @@ export function Timeline({ data }: Props) {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   const itemKey = (item: Experience) =>
-    // @ts-expect-error
-    item.id ?? `${item.date}-${item.title}-${item.job}`;
+    `${item.date}-${item.title}-${item.job}`;
 
   return (
     <div ref={containerRef} className="relative pb-20">

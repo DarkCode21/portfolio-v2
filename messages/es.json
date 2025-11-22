@@ -82,63 +82,63 @@
     "preview_alt": "Vista previa del proyecto",
     "items": {
       "ecommerce-platform": {
-        "title": "Plataforma de E‑commerce",
-        "description": "Facilita compras en webs internacionales como Amazon o eBay para recibir los productos de forma nacional.",
+        "title": "Plataforma E-commerce",
+        "description": "Desarrollé una plataforma e-commerce de alto rendimiento con un enfoque en velocidad, escalabilidad y experiencia de usuario fluida.",
         "subDescription": [
-          "Aplicación escalable con ASP.NET Core MVC, integrando plataformas globales.",
-          "Autenticación segura e identidad con ASP.NET Core Identity y EF Core.",
-          "Frontend responsive con Tailwind CSS para mejorar UX.",
-          "Pagos, localización y filtros de productos."
+          "Construí el backend utilizando Laravel 11 con Laravel Octane para optimizar la concurrencia y el rendimiento del servidor.",
+          "Implementé el frontend en Next.js 15, logrando una interfaz moderna, rápida y responsiva.",
+          "Desplegué todo el sistema en contenedores Docker con Nginx como servidor web, asegurando portabilidad y escalabilidad.",
+          "Integré el sistema de pagos mediante la API Checkout de Mercado Pago, garantizando transacciones seguras y confiables."
         ]
       },
-      "auth-system": {
-        "title": "Sistema de Autenticación y Autorización",
-        "description": "Sistema seguro de autenticación/autorización con Auth0 para una gestión fluida de usuarios.",
+      "social-network": {
+        "title": "Red Social con Chat en Tiempo Real",
+        "description": "Desarrollé una red social interactiva con funcionalidades completas y comunicación en tiempo real entre usuarios.",
         "subDescription": [
-          "Auth0 con OAuth, JWT y MFA.",
-          "RBAC para permisos granulares.",
-          "Frontend en React + Tailwind CSS.",
-          "SQLite seguro para almacenamiento de usuarios."
+          "Implementé un sistema de publicaciones con likes, comentarios, guardados y seguimiento de usuarios.",
+          "Diseñé comunidades donde los usuarios pueden compartir contenido y participar en conversaciones.",
+          "Integré la API de GetStream para ofrecer chat en tiempo real con mensajería privada y creación de grupos.",
+          "Permití el envío de contenido multimedia en los chats, mejorando la experiencia de comunicación."
         ]
       },
-      "blazor-web-app": {
-        "title": "Aplicación Web Blazor",
-        "description": "SPA moderna e interactiva con Blazor WebAssembly y .NET Core.",
+      "appointments-system": {
+        "title": "Sistema Web de Reservación de Citas Médicas",
+        "description": "Desarrollé un sistema integral para la gestión y reserva de citas médicas, optimizando la atención y los procesos administrativos.",
         "subDescription": [
-          "SPA completa con Blazor WebAssembly.",
-          "APIs con .NET Core para backend sólido.",
-          "UI responsive con Tailwind CSS.",
-          "SQLite integrado para almacenamiento eficiente."
+          "Permite a los pacientes reservar citas médicas en línea o presenciales de forma rápida y segura.",
+          "Facilita al personal médico y administrativo la gestión eficiente de horarios, pacientes y disponibilidad.",
+          "Implementé un sistema de recomendación basado en inteligencia artificial que sugiere médicos según el problema del paciente.",
+          "Mejoré la experiencia del usuario mediante una interfaz intuitiva y flujos automatizados que reducen tiempos de atención."
         ]
       },
-      "cpp-game-engine": {
-        "title": "Motor de Juegos en C++",
-        "description": "Motor ligero de C++ para desarrollo 2D/3D.",
+      "emotion-recognition-system": {
+        "title": "Sistema de Reconocimiento Facial de Emociones",
+        "description": "Desarrollé un sistema basado en visión por computadora para el reconocimiento de emociones en niños con habilidades especiales, promoviendo la comprensión y gestión emocional.",
         "subDescription": [
-          "Render con OpenGL y C++.",
-          "Física con colisiones y partículas.",
-          "Sistema de scripting para personalización.",
-          "Rendimiento optimizado con multihilo y memoria eficiente."
+          "Utilicé algoritmos de visión por computadora y aprendizaje automático para detectar y reconocer expresiones faciales en tiempo real.",
+          "Proporcioné retroalimentación visual e interactiva para ayudar a los niños a identificar y comprender sus emociones.",
+          "Optimicé el sistema para funcionar de manera precisa incluso en entornos con iluminación variable.",
+          "Contribuí al desarrollo de herramientas tecnológicas inclusivas enfocadas en el aprendizaje emocional asistido."
         ]
       },
-      "wordpress-theme": {
-        "title": "Tema WordPress a Medida",
-        "description": "Tema WordPress personalizable optimizado para rendimiento y SEO.",
+      "cyberpunk-hacker-game": {
+        "title": "Cyberpunk Hacker Game – Gemini",
+        "description": "Desarrollé un juego interactivo basado en inteligencia artificial que genera historias, escenas y decisiones en un entorno cyberpunk-apocalíptico.",
         "subDescription": [
-          "Responsive con HTML5, CSS3 y JavaScript.",
-          "Tailwind CSS para UI moderna.",
-          "SEO + velocidad con Vite.js.",
-          "Widgets y compatibilidad con plugins."
+          "Implementé el frontend del juego utilizando tecnologías modernas para ofrecer una experiencia inmersiva e intuitiva.",
+          "Integré Gemini para generar dinámicamente la historia, diálogos e imágenes según las decisiones del jugador.",
+          "El juego inicia automáticamente con una escena del apocalipsis zombi y evoluciona en función de las acciones del usuario.",
+          "Cada decisión afecta la narrativa, los eventos y las posibilidades de supervivencia dentro del mundo generado."
         ]
       },
-      "elearning-platform": {
-        "title": "Plataforma de Aprendizaje Online",
-        "description": "Web para inscribirse en cursos, ver videos y realizar cuestionarios.",
+      "software-agency-website": {
+        "title": "Sitio Web Profesional para Agencia de Software",
+        "description": "Diseñé y desarrollé un sitio web corporativo en WordPress optimizado para rendimiento, posicionamiento SEO y experiencia de usuario.",
         "subDescription": [
-          "Blazor WebAssembly para experiencia SPA.",
-          "Streaming de video con Azure Media Services.",
-          "Quizzes dinámicos con corrección en tiempo real.",
-          "Pagos seguros con Stripe."
+          "Construí un sitio totalmente administrable en WordPress, adaptado a las necesidades de una agencia de software.",
+          "Optimicé el rendimiento y las métricas de PageSpeed, alcanzando puntuaciones sobresalientes en velocidad y usabilidad.",
+          "Implementé buenas prácticas de SEO técnico y estructural para mejorar la visibilidad en motores de búsqueda.",
+          "Apliqué un diseño profesional, moderno y responsive, garantizando una excelente experiencia en cualquier dispositivo."
         ]
       }
     }
@@ -190,10 +190,53 @@
       }
     }
   },
+
   "Testimonial": {
     "title": "Lo que dicen mis clientes",
     "aria_label": "Sección de testimonios",
-    "avatarAlt": "Avatar de {name}"
+    "avatarAlt": "Avatar de {name}",
+    "items": {
+      "jack": {
+        "name": "Jack",
+        "username": "@jack",
+        "body": "Nunca había visto algo así antes. Es increíble. Me encanta."
+      },
+      "jill": {
+        "name": "Jill",
+        "username": "@jill",
+        "body": "No sé qué decir. Me he quedado sin palabras. Es asombroso."
+      },
+      "john": {
+        "name": "John",
+        "username": "@john",
+        "body": "No tengo palabras. Esto es increíble. Me encanta."
+      },
+      "alice": {
+        "name": "Alice",
+        "username": "@alice",
+        "body": "Sin duda, la mejor experiencia que he tenido. ¡Lo recomiendo totalmente!"
+      },
+      "bob": {
+        "name": "Bob",
+        "username": "@bob",
+        "body": "¡Trabajo increíble! La atención al detalle es fenomenal."
+      },
+      "charlie": {
+        "name": "Charlie",
+        "username": "@charlie",
+        "body": "Superó todas mis expectativas. ¡Absolutamente impresionante!"
+      },
+      "dave": {
+        "name": "Dave",
+        "username": "@dave",
+        "body": "Simplemente impresionante. La mejor decisión que he tomado en mucho tiempo."
+      },
+      "eve": {
+        "name": "Eve",
+        "username": "@eve",
+        "body": "Me alegra mucho haber encontrado esto. Ha cambiado las reglas del juego para mí."
+      }
+    }
   },
   "Contact": {
     "aria_label": "Sección de contacto",

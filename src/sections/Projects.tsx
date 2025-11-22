@@ -1,4 +1,6 @@
+// src/sections/Projects.tsx
 "use client";
+
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";

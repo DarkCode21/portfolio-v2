@@ -7,9 +7,7 @@ import type { Tag } from "@/constants";
 import ProjectDetails from "./ProjectDetails";
 
 type Props = {
-  title: string;
-  description: string;
-  subDescription: string[];
+  slug: string;
   href: string;
   image: string;
   tags: Tag[];
@@ -17,9 +15,7 @@ type Props = {
 };
 
 export default function Project({
-  title,
-  description,
-  subDescription,
+  slug,
   href,
   image,
   tags,
@@ -27,7 +23,13 @@ export default function Project({
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const headingId = useId();
+
   const t = useTranslations("Project");
+  const tItems = useTranslations("Projects.items");
+
+  const title = tItems(`${slug}.title`);
+  const description = tItems(`${slug}.description`);
+  const subDescription = tItems.raw(`${slug}.subDescription`) as string[];
 
   return (
     <>
