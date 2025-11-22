@@ -161,10 +161,10 @@
         "job": "T-SOLUCIONA, La Libertad - Perú",
         "date": "Abril 2024 — Agosto 2024",
         "contents": [
-          "Sistema integral de inventarios y valijas para stock y documentación entre sedes/proveedores.",
-          "Automatización de seguimiento e intercambio documental.",
-          "+50% de eficiencia operativa al digitalizar procesos.",
-          "Arquitectura escalable para futuras necesidades."
+          "Desarrollé e implementé un sistema web integral de gestión de inventarios y valijas para optimizar el control de stock y la documentación entre sedes y proveedores.",
+          "Automatizé procesos clave como el seguimiento de inventarios y la gestión documental, reduciendo significativamente errores humanos y tiempos de respuesta.",
+          "Logré una mejora del 50% en la eficiencia operativa mediante la digitalización de procesos críticos.",
+          "Diseñé la arquitectura del sistema con escalabilidad en mente, permitiendo su adaptación a futuras necesidades de la empresa."
         ]
       },
       "interiberica": {
@@ -172,11 +172,11 @@
         "job": "INTERIBERICA, Almería - España",
         "date": "Agosto 2024 — Septiembre 2025",
         "contents": [
-          "Mejoras de rendimiento y nuevas funcionalidades.",
-          "OpenCart/PrestaShop: desarrollo e integración de plugins.",
-          "WordPress para sitios y tiendas escalables.",
-          "APIs REST (propias/terceros), OpenAI y automatizaciones.",
-          "UI responsive con -40% tiempos de carga."
+          "Desarrollé y optimicé sistemas web existentes, incorporando nuevas funcionalidades y mejorando el rendimiento general.",
+          "Trabajé con plataformas de eCommerce como OpenCart y PrestaShop, desarrollando e integrando plugins personalizados.",
+          "Desarrollé proyectos en WordPress para sitios corporativos y tiendas online, asegurando escalabilidad y mantenibilidad.",
+          "Implementé y consumí APIs REST propias y de terceros, incluyendo integraciones con OpenAI y otros servicios externos para ampliar funcionalidades y automatizar procesos.",
+          "Diseñé e implementé interfaces responsivas adaptadas a distintos dispositivos, incrementando la satisfacción del usuario y reduciendo los tiempos de carga en un 40%."
         ]
       },
       "freelance": {
@@ -184,8 +184,8 @@
         "job": "Independiente",
         "date": "2025 — Presente",
         "contents": [
-          "Apps full stack con React, Next.js, Laravel y Node.js.",
-          "Portafolio y proyectos escalables con APIs y SQL/NoSQL."
+          "Desarrollo aplicaciones web full stack, trabajando tanto en el frontend como en el backend con tecnologías modernas como React, Next.js, Laravel y Node.js.",
+          "He creado un portafolio personal y proyectos escalables que integran APIs externas y bases de datos SQL/NoSQL, fortaleciendo mis habilidades en soluciones de alto rendimiento."
         ]
       }
     }

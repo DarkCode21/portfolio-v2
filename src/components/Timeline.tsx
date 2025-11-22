@@ -49,7 +49,7 @@ export function Timeline({ data }: Props) {
             key={itemKey(item)}
             className="md:pt-40 md:gap-10 flex justify-start pt-10"
           >
-            {/* left column (date/title) */}
+            {/* left column  */}
             <div className="sticky top-40 z-40 flex max-w-xs md:w-full lg:max-w-sm flex-col items-center self-start md:flex-row">
               <div className="absolute -left-[15px] flex h-10 w-10 items-center justify-center rounded-full bg-midnight">
                 <div className="h-4 w-4 rounded-full border border-neutral-700 bg-neutral-800 p-2" />
@@ -61,7 +61,7 @@ export function Timeline({ data }: Props) {
               </div>
             </div>
 
-            {/* right column (contents) */}
+            {/* right column  */}
             <div className="relative w-full pl-20 pr-4 md:pl-4">
               <div className="md:hidden block text-left text-2xl font-bold text-neutral-300 mb-4">
                 <h3>{item.date}</h3>

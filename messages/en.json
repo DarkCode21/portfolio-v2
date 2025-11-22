@@ -143,10 +143,10 @@
         "job": "T-SOLUCIONA, La Libertad - Peru",
         "date": "April 2024 — August 2024",
         "contents": [
-          "Comprehensive inventory and pouch management system for stock and documentation between branches and suppliers.",
-          "Automation of tracking and document exchange processes.",
-          "50% operational efficiency improvement by digitizing critical workflows.",
-          "System architecture designed with scalability in mind."
+          "I developed and implemented a comprehensive web-based inventory and baggage management system to optimize stock control and documentation between branches and suppliers.",
+          "I automated key processes such as inventory tracking and document management, significantly reducing human error and response times.",
+          "I achieved a 50% improvement in operational efficiency by digitizing critical processes.",
+          "I designed the system architecture with scalability in mind, allowing it to adapt to the company's future needs."
         ]
       },
       "interiberica": {
@@ -154,11 +154,11 @@
         "job": "INTERIBERICA, Almería - Spain",
         "date": "August 2024 — September 2025",
         "contents": [
-          "Performance improvements and new feature development for existing systems.",
-          "OpenCart/PrestaShop: custom plugin development and integrations.",
-          "WordPress projects for scalable corporate sites and online stores.",
-          "REST API integrations (own and third-party), including OpenAI and external services.",
-          "Responsive UI with up to 40% reduction in load times."
+          "I developed and optimized existing web systems, incorporating new functionalities and improving overall performance.",
+          "I worked with eCommerce platforms such as OpenCart and PrestaShop, developing and integrating custom plugins.",
+          "I developed WordPress projects for corporate websites and online stores, ensuring scalability and maintainability.",
+          "I implemented and consumed proprietary and third-party REST APIs, including integrations with OpenAI and other external services to extend functionality and automate processes.",
+          "I designed and implemented responsive interfaces adapted to different devices, increasing user satisfaction and reducing loading times by 40%."
         ]
       },
       "freelance": {
@@ -166,8 +166,8 @@
         "job": "Independent",
         "date": "2025 — Present",
         "contents": [
-          "Full stack web apps using React, Next.js, Laravel, and Node.js.",
-          "Portfolio and scalable projects integrating external APIs and SQL/NoSQL databases."
+          "I develop full-stack web applications, working on both the frontend and backend with modern technologies such as React, Next.js, Laravel, and Node.js.",
+          "I have built a personal portfolio and scalable projects that integrate external APIs and SQL/NoSQL databases, strengthening my skills in high-performance solutions."
         ]
       }
     }

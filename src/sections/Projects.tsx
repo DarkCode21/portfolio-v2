@@ -1,4 +1,3 @@
-// src/sections/Projects.tsx
 "use client";
 
 import { motion, useMotionValue, useSpring } from "framer-motion";

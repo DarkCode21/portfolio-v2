@@ -2,7 +2,7 @@ export type Tag = { id: number; name: string; path: string };
 
 export type Project = {
   id: number;
-  slug: string; // clave para i18n
+  slug: string;
   href: string;
   logo: string;
   image: string;
@@ -13,7 +13,7 @@ export type Social = { name: string; href: string; icon: string };
 
 // Sólo metadatos de los reviews, el texto se traduce por i18n
 export type ReviewMeta = {
-  key: string; // clave para i18n
+  key: string;
   img: string;
 };
 
@@ -119,14 +119,12 @@ export const mySocials: Social[] = [
   },
 ];
 
-// Claves (IDs) para las experiencias, el texto va en messages/*.json
 export const experienceKeys = [
   "tsoluciona",
   "interiberica",
   "freelance",
 ] as const;
 
-// Metadatos de reviews (las fotos), el texto va en i18n
 export const reviews: ReviewMeta[] = [
   { key: "jack", img: "https://robohash.org/jack" },
   { key: "jill", img: "https://robohash.org/jill" },
