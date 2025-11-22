@@ -1,1 +1,1 @@
-cobe.d.ts;
+declare module "cobe";
