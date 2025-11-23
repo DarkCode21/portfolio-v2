@@ -5,6 +5,13 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { Funnel_Display } from "next/font/google";
+
+const funnelDisplay = Funnel_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-funnel",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://darkcode-portfolio.vercel.app"),
@@ -63,7 +70,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className="min-h-dvh bg-primary text-white antialiased">
+      <body
+        className={`${funnelDisplay.className} min-h-dvh bg-primary text-white antialiased`}
+      >
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

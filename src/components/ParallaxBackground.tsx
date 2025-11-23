@@ -34,7 +34,7 @@ export default function ParallaxBackground() {
           className="absolute inset-0 -z-40"
           style={
             {
-              backgroundImage: "url(/assets/mountain-3.png)",
+              backgroundImage: "url(/assets/mountain-3.webp)",
               backgroundPosition: "bottom",
               backgroundSize: "cover",
               y: mountain3Y,
@@ -60,7 +60,7 @@ export default function ParallaxBackground() {
           className="absolute inset-0 -z-20"
           style={
             {
-              backgroundImage: "url(/assets/mountain-2.png)",
+              backgroundImage: "url(/assets/mountain-2.webp)",
               backgroundPosition: "bottom",
               backgroundSize: "cover",
               y: mountain2Y,
@@ -73,7 +73,7 @@ export default function ParallaxBackground() {
           className="absolute inset-0 -z-10"
           style={
             {
-              backgroundImage: "url(/assets/mountain-1.png)",
+              backgroundImage: "url(/assets/mountain-1.webp)",
               backgroundPosition: "bottom",
               backgroundSize: "cover",
               y: mountain1Y,

@@ -32,7 +32,7 @@ export default function About() {
             aria-hidden
             width={800}
             height={800}
-            quality={100}
+            quality={70}
             sizes="100vw"
             className="absolute -right-[5rem] -top-[1rem] scale-[1.75] md:left-50 md:inset-y-10 md:scale-[3] lg:scale-[2.5]"
           />
@@ -130,5 +130,3 @@ export default function About() {
     </section>
   );
 }
-
-
