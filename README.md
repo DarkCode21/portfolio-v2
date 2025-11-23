@@ -24,8 +24,8 @@ This is the second iteration of my personal portfolio (`v2`). The goal of this p
 
 | Home Page | Projects Section |
 |:---:|:---:|
-| ![Home Page](/public/screenshots/home.png) | ![Projects](/public/screenshots/projects.png) |
-| *Landing page view* | *My featured work* |
+| ![Home Page](/public/screenshots/home.png) | ![About me](/public/screenshots/about.png) |
+| *Landing page view* | *My about me* |
 
 *(Note: If images are not loading, please verify the `public/screenshots` folder exists)*
 
