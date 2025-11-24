@@ -13,6 +13,8 @@ Bienvenido al repositorio de mi portafolio personal. Este proyecto muestra mis h
 
 ---
 
+
+
 <a id="-english-version"></a>
 ## 🇬🇧 English Version
 
@@ -67,6 +69,23 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 ---
 
+## 📜 License & Usage
+
+This repository contains my personal portfolio, created by **Deyvi Villegas (DarkCode / DarkCode21)**.
+
+You are welcome to:
+- Clone the project and explore the code.
+- Use parts of the code as reference or for **personal / non-commercial** projects.
+- Learn from the structure, components, and ideas.
+
+Please **do not**:
+- Publish this portfolio as your own.
+- Reuse it as a “ready-made template” to sell or deliver to clients without my permission.
+- Remove the original attribution.
+
+For any commercial use or collaboration, feel free to contact me.
+
+
 <a id="-versión-en-español"></a>
 ## 🇪🇸 Versión en Español
 
@@ -116,5 +135,22 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 La forma más fácil de desplegar tu aplicación Next.js es usar la [Plataforma Vercel](https://vercel.com/new).
 
 ---
+
+## 📜 Licencia y Uso
+
+Este repositorio contiene mi portafolio personal, creado por **Deyvi Villegas (DarkCode / DarkCode21)**.
+
+Puedes:
+- Clonar el proyecto y revisar el código.
+- Usar partes del código como referencia o para proyectos **personales y no comerciales**.
+- Aprender de la estructura, componentes e ideas.
+
+Por favor, **no**:
+- Publiques este portafolio como si fuera tuyo.
+- Lo reutilices como plantilla “lista para usar” para vender o entregar a clientes sin mi permiso.
+- Elimines la atribución original.
+
+Para cualquier uso comercial o colaboración, puedes contactarme sin problema.
+
 
 Made with ❤️ by [DarkCode21](https://github.com/DarkCode21)
