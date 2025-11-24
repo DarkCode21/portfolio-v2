@@ -1,3 +1,9 @@
+/**
+ * Portfolio V2 - DarkCode21
+ * Author: Deyvi Villegas (DarkCode)
+ * Usage: Personal / non-commercial use allowed. See LICENSE for details.
+ */
+
 import About from "@/sections/About";
 import Contact from "@/sections/Contact";
 import Experiences from "@/sections/Experiences";

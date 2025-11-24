@@ -1,3 +1,9 @@
+/**
+ * Portfolio V2 - DarkCode21
+ * Author: Deyvi Villegas (DarkCode)
+ * Usage: Personal / non-commercial use allowed. See LICENSE for details.
+ */
+
 import "./globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
