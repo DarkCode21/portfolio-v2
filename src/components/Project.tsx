@@ -46,7 +46,7 @@ export default function Project({
             {title}
           </h3>
 
-          <ul className="mt-2 flex gap-5 text-sand">
+          <ul className="mt-2 flex flex-wrap gap-5 text-sand">
             {tags.map((tag) => (
               <li key={tag.id}>
                 <span className="whitespace-nowrap">{tag.name}</span>
