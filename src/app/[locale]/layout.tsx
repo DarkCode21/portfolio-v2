@@ -12,7 +12,6 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Funnel_Display } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const funnelDisplay = Funnel_Display({
   subsets: ["latin"],
@@ -82,7 +81,6 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
-          <SpeedInsights />
         </NextIntlClientProvider>
       </body>
     </html>
